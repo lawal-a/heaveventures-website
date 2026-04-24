@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heave Ventures — Africa's Innovation Infrastructure</title>
+  <meta name="description" content="Heave Ventures designs, builds and operates Africa's innovation infrastructure — connecting the continent's largest institutions to the startup and talent ecosystems solving their hardest problems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="14" height="14" fill="#4abe5c"/>
+          <rect x="18" width="14" height="14" fill="#2d7a3a"/>
+          <rect y="18" width="14" height="14" fill="#2d7a3a"/>
+          <rect x="18" y="18" width="14" height="14" fill="#4abe5c"/>
+          <polygon points="0,14 14,0 14,14" fill="#121212"/>
+          <polygon points="18,14 32,0 32,14" fill="#121212"/>
+          <polygon points="0,18 14,32 14,18" fill="#121212"/>
+          <polygon points="18,18 32,32 32,18" fill="#121212"/>
+        </svg>
+        <span>Heave<strong>Ventures</strong></span>
+      </a>
+      <nav class="nav__links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#clients">Clients</a>
+        <a href="#work">Work</a>
+        <a href="#contact" class="nav__cta">Let's build →</a>
+      </nav>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero__geo" aria-hidden="true">
+      <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <!-- 5×5 triangle grid like the deck -->
+        <g opacity="0.9">
+          <!-- Row 1 -->
+          <polygon points="0,0 120,0 0,120" fill="#1b4d27"/>
+          <polygon points="120,0 240,0 120,120" fill="#2d7a3a"/>
+          <polygon points="240,0 360,0 240,120" fill="#4abe5c"/>
+          <polygon points="360,0 480,0 360,120" fill="#2d7a3a"/>
+          <polygon points="480,0 600,0 480,120" fill="#1b4d27"/>
+          <polygon points="120,0 240,0 240,120" fill="#2d7a3a"/>
+          <polygon points="240,0 360,0 360,120" fill="#1b4d27"/>
+          <polygon points="360,0 480,0 480,120" fill="#4abe5c"/>
+          <polygon points="480,0 600,0 600,120" fill="#2d7a3a"/>
+          <!-- Row 2 -->
+          <polygon points="0,120 120,120 0,240" fill="#2d7a3a"/>
+          <polygon points="120,120 240,120 120,240" fill="#4abe5c"/>
+          <polygon points="240,120 360,120 240,240" fill="#1b4d27"/>
+          <polygon points="360,120 480,120 360,240" fill="#4abe5c"/>
+          <polygon points="480,120 600,120 480,240" fill="#2d7a3a"/>
+          <polygon points="120,120 240,120 240,240" fill="#1b4d27"/>
+          <polygon points="240,120 360,120 360,240" fill="#2d7a3a"/>
+          <polygon points="360,120 480,120 480,240" fill="#1b4d27"/>
+          <polygon points="480,120 600,120 600,240" fill="#4abe5c"/>
+          <!-- Row 3 -->
+          <polygon points="0,240 120,240 0,360" fill="#4abe5c"/>
+          <polygon points="120,240 240,240 120,360" fill="#1b4d27"/>
+          <polygon points="240,240 360,240 240,360" fill="#2d7a3a"/>
+          <polygon points="360,240 480,240 360,360" fill="#1b4d27"/>
+          <polygon points="480,240 600,240 480,360" fill="#4abe5c"/>
+          <polygon points="120,240 240,240 240,360" fill="#2d7a3a"/>
+          <polygon points="240,240 360,240 360,360" fill="#4abe5c"/>
+          <polygon points="360,240 480,240 480,360" fill="#2d7a3a"/>
+          <polygon points="480,240 600,240 600,360" fill="#1b4d27"/>
+          <!-- Row 4 -->
+          <polygon points="0,360 120,360 0,480" fill="#1b4d27"/>
+          <polygon points="120,360 240,360 120,480" fill="#2d7a3a"/>
+          <polygon points="240,360 360,360 240,480" fill="#4abe5c"/>
+          <polygon points="360,360 480,360 360,480" fill="#2d7a3a"/>
+          <polygon points="480,360 600,360 480,480" fill="#1b4d27"/>
+          <polygon points="120,360 240,360 240,480" fill="#4abe5c"/>
+          <polygon points="240,360 360,360 360,480" fill="#1b4d27"/>
+          <polygon points="360,360 480,360 480,480" fill="#4abe5c"/>
+          <polygon points="480,360 600,360 600,480" fill="#2d7a3a"/>
+          <!-- Row 5 -->
+          <polygon points="0,480 120,480 0,600" fill="#2d7a3a"/>
+          <polygon points="120,480 240,480 120,600" fill="#4abe5c"/>
+          <polygon points="240,480 360,480 240,600" fill="#1b4d27"/>
+          <polygon points="360,480 480,480 360,600" fill="#4abe5c"/>
+          <polygon points="480,480 600,480 480,600" fill="#2d7a3a"/>
+          <polygon points="120,480 240,480 240,600" fill="#1b4d27"/>
+          <polygon points="240,480 360,480 360,600" fill="#2d7a3a"/>
+          <polygon points="360,480 480,480 480,600" fill="#1b4d27"/>
+          <polygon points="480,480 600,480 600,600" fill="#4abe5c"/>
+        </g>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="hero__content">
+        <p class="hero__eyebrow reveal">Africa's Leading Open Innovation Firm</p>
+        <h1 class="hero__headline reveal">
+          We design, build<br/>
+          and operate Africa's<br/>
+          innovation
+          <span class="text-green">infrastructure.</span>
+        </h1>
+        <p class="hero__sub reveal">Connecting the continent's largest institutions to the startup<br class="br-lg"/> and talent ecosystems solving their hardest problems.</p>
+        <div class="hero__actions reveal">
+          <a href="#services" class="btn btn--primary">Explore our work</a>
+          <a href="#contact" class="btn btn--ghost">Let's build together →</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll" aria-hidden="true">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ ABOUT / STATS ═══════════════════════════════ -->
+  <section class="about section--dark-green" id="about">
+    <div class="container about__grid">
+      <div class="about__copy reveal">
+        <p class="label">Who We Are</p>
+        <h2>Africa's leading<br/>Open Innovation firm</h2>
+        <p class="body-lg">Heave Ventures builds the infrastructure that connects the continent's largest institutions to the startup and talent ecosystems solving their hardest problems.</p>
+        <p class="body-md">Our HQ is Yaba, Lagos — with active programmes across Nigeria, Francophone West Africa and East Africa.</p>
+      </div>
+      <div class="about__stats reveal">
+        <div class="stat-card">
+          <span class="stat-card__number">7<span class="stat-card__plus">+</span></span>
+          <span class="stat-card__label">Years building Africa's open-innovation ecosystem</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__number">25<span class="stat-card__suffix">k</span></span>
+          <span class="stat-card__label">Startups active in our community</span>
+        </div>
+        <div class="stat-card stat-card--wide">
+          <div class="stat-card__dot-grid" aria-hidden="true">
+            <svg viewBox="0 0 200 120" fill="none">
+              <g fill="#4abe5c">
+                <circle cx="10" cy="10" r="6"/><circle cx="30" cy="10" r="5"/><circle cx="50" cy="10" r="4"/><circle cx="70" cy="10" r="3"/><circle cx="90" cy="10" r="2"/>
+                <circle cx="10" cy="30" r="5"/><circle cx="30" cy="30" r="4"/><circle cx="50" cy="30" r="3"/><circle cx="70" cy="30" r="2.5"/><circle cx="90" cy="30" r="1.5"/>
+                <circle cx="10" cy="50" r="4"/><circle cx="30" cy="50" r="3.5"/><circle cx="50" cy="50" r="2.5"/><circle cx="70" cy="50" r="1.5"/>
+                <circle cx="10" cy="70" r="3"/><circle cx="30" cy="70" r="2.5"/><circle cx="50" cy="70" r="2"/>
+                <circle cx="10" cy="90" r="2"/><circle cx="30" cy="90" r="1.5"/>
+                <circle cx="10" cy="110" r="1.5"/>
+              </g>
+            </svg>
+          </div>
+          <div class="stat-card__location">
+            <svg width="20" height="24" viewBox="0 0 20 24" fill="none"><path d="M10 0C4.477 0 0 4.477 0 10C0 17.5 10 24 10 24C10 24 20 17.5 20 10C20 4.477 15.523 0 10 0ZM10 13C8.343 13 7 11.657 7 10C7 8.343 8.343 7 10 7C11.657 7 13 8.343 13 10C13 11.657 11.657 13 10 13Z" fill="#4abe5c"/></svg>
+            <span>Yaba, Lagos · Nigeria · Francophone West Africa · East Africa</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ WHY WE EXIST ═══════════════════════════════ -->
+  <section class="why section--dark" id="why">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="label">Why We Exist</p>
+        <h2>The problems<br/>we were built to solve</h2>
+      </div>
+      <div class="why__grid">
+        <div class="why-card reveal">
+          <div class="why-card__icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="4" fill="#1b4d27"/><path d="M8 28L16 20L22 26L32 14" stroke="#4abe5c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="8" y="8" width="8" height="6" rx="1" fill="#4abe5c" opacity="0.5"/></svg>
+          </div>
+          <h3>Africa's Biggest Institutions Are Being Disrupted</h3>
+          <p>Banks, telcos, insurers and energy companies face startup disruption from every direction — yet most have no structured way to engage, co-build, or invest in the solutions threatening them.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-card__icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="4" fill="#1b4d27"/><path d="M20 8V20M14 14L20 8L26 14" stroke="#4abe5c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="10" y="22" width="20" height="10" rx="2" fill="#4abe5c" opacity="0.3"/><path d="M14 27H26" stroke="#4abe5c" stroke-width="2" stroke-linecap="round"/><path d="M14 30H22" stroke="#4abe5c" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Innovation Programmes Die Without Infrastructure</h3>
+          <p>Most 'innovation' in Africa stops at the hackathon. Without programme continuity, hub management, and commercial pathways, good ideas never become real businesses.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-card__icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="4" fill="#1b4d27"/><circle cx="20" cy="20" r="10" stroke="#4abe5c" stroke-width="2.5"/><path d="M15 20C15 17.239 17.239 15 20 15C22.761 15 25 17.239 25 20" stroke="#4abe5c" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="20" r="3" fill="#4abe5c"/></svg>
+          </div>
+          <h3>The Silicon Valley Model Does Not Fit Africa's Tropical Savannah</h3>
+          <p>Western frameworks don't map onto African market realities — informal networks, infrastructure gaps, policy constraints, and trust dynamics require a native approach.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ WHAT WE DO ═══════════════════════════════ -->
+  <section class="services section--dark" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="label">What We Do</p>
+        <h2>Six ways we build<br/>innovation infrastructure</h2>
+      </div>
+      <div class="services__grid">
+
+        <div class="service-card reveal">
+          <div class="service-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="6" fill="#4abe5c"/><path d="M14 4V8M14 20V24M4 14H8M20 14H24M6.34 6.34L9.17 9.17M18.83 18.83L21.66 21.66M6.34 21.66L9.17 18.83M18.83 9.17L21.66 6.34" stroke="#4abe5c" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Project Delivery</h3>
+          <p>End-to-end design and delivery of corporate innovation sprints, venture builds, and open innovation engagements.</p>
+          <span class="service-card__arrow">→</span>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="4" width="24" height="20" rx="2" stroke="#4abe5c" stroke-width="2"/><path d="M2 10H26M8 4V10M20 4V10" stroke="#4abe5c" stroke-width="2" stroke-linecap="round"/><rect x="7" y="15" width="4" height="4" rx="1" fill="#4abe5c"/><rect x="13" y="15" width="4" height="4" rx="1" fill="#4abe5c" opacity="0.5"/><rect x="17" y="15" width="4" height="4" rx="1" fill="#4abe5c" opacity="0.3"/></svg>
+          </div>
+          <h3>Program Management</h3>
+          <p>Full management of hackathons, incubation programmes, and acceleration cohorts — from design to demo day.</p>
+          <span class="service-card__arrow">→</span>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="6" width="24" height="18" rx="2" stroke="#4abe5c" stroke-width="2"/><rect x="6" y="2" width="4" height="8" rx="1" fill="#4abe5c"/><rect x="18" y="2" width="4" height="8" rx="1" fill="#4abe5c"/><path d="M8 16H20M8 20H14" stroke="#4abe5c" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Hub / Labs Management</h3>
+          <p>Design and operation of physical and virtual innovation sandboxes — turning space into productive infrastructure.</p>
+          <span class="service-card__arrow">→</span>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 22L10 14L16 18L24 8" stroke="#4abe5c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 8H24V10" stroke="#4abe5c" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="14" r="2" fill="#4abe5c"/><circle cx="16" cy="18" r="2" fill="#4abe5c"/></svg>
+          </div>
+          <h3>Event Management</h3>
+          <p>Demo days, ecosystem meetups, and marquee innovation events that build community and attract deal flow.</p>
+          <span class="service-card__arrow">→</span>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="4" width="24" height="16" rx="2" stroke="#4abe5c" stroke-width="2"/><path d="M10 24H18M14 20V24" stroke="#4abe5c" stroke-width="2" stroke-linecap="round"/><path d="M8 12H12M16 12H20M8 16H14" stroke="#4abe5c" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Product Development</h3>
+          <p>Websites, web apps, and proprietary platforms that power our programmes and those of our clients — including VentureOS and Zimara.org.</p>
+          <span class="service-card__arrow">→</span>
+        </div>
+
+        <div class="service-card service-card--accent reveal">
+          <div class="service-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4C14 4 8 8 8 14C8 20 14 24 14 24C14 24 20 20 20 14C20 8 14 4 14 4Z" stroke="#121212" stroke-width="2" fill="none"/><circle cx="14" cy="14" r="4" fill="#121212"/><path d="M4 14H8M20 14H24M14 4V8M14 20V24" stroke="#121212" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>AI-Native Implementation</h3>
+          <p>Designing and deploying the AI tools, workflows, and open innovation technology stack for institutions and communities.</p>
+          <span class="service-card__arrow service-card__arrow--dark">→</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ OUR APPROACH ═══════════════════════════════ -->
+  <section class="approach section--charcoal" id="approach">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="label">How We Implement Innovation Projects</p>
+        <h2>Our Approach</h2>
+      </div>
+      <div class="approach__steps">
+
+        <div class="step reveal">
+          <div class="step__number">01</div>
+          <div class="step__connector" aria-hidden="true"></div>
+          <div class="step__body">
+            <h3>Diagnose</h3>
+            <p>Map the institution's innovation maturity, strategic gaps, and ecosystem connectivity. Define what Corporate-Startup Fit looks like for this client.</p>
+          </div>
+        </div>
+
+        <div class="step reveal">
+          <div class="step__number">02</div>
+          <div class="step__connector" aria-hidden="true"></div>
+          <div class="step__body">
+            <h3>Design</h3>
+            <p>Architect the programme — open innovation model, pipeline structure, governance framework, and metrics. We don't template; we design.</p>
+          </div>
+        </div>
+
+        <div class="step reveal">
+          <div class="step__number">03</div>
+          <div class="step__connector" aria-hidden="true"></div>
+          <div class="step__body">
+            <h3>Build</h3>
+            <p>Stand up the infrastructure — digital platforms and sandboxes, physical hubs, programme workflows, and AI tooling. Execution with zero outsourcing opacity.</p>
+          </div>
+        </div>
+
+        <div class="step reveal">
+          <div class="step__number">04</div>
+          <div class="step__connector" aria-hidden="true"></div>
+          <div class="step__body">
+            <h3>Run</h3>
+            <p>Run the programme end-to-end: cohort intake, mentor networks, corporate matchmaking, investor connections, and continuous reporting.</p>
+          </div>
+        </div>
+
+        <div class="step step--last reveal">
+          <div class="step__number">05</div>
+          <div class="step__body">
+            <h3>Transfer</h3>
+            <p>Transfer capability. Train client teams. Leave behind a self-sustaining innovation operation, not a dependency on Heave.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ WHO WE SERVE ═══════════════════════════════ -->
+  <section class="clients section--dark" id="clients">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="label">Our Clients</p>
+        <h2>Who We Serve</h2>
+      </div>
+      <div class="clients__grid">
+
+        <div class="client-card reveal">
+          <div class="client-card__icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="10" width="24" height="18" rx="1" stroke="#4abe5c" stroke-width="2"/><path d="M4 14H28M12 10V28M20 10V28" stroke="#4abe5c" stroke-width="1.5"/><rect x="9" y="4" width="14" height="6" rx="1" stroke="#4abe5c" stroke-width="2"/></svg>
+          </div>
+          <h3>Corporates</h3>
+          <p>Banks, telcos, FMCG, energy, insurance — institutions that need structured engagement with startups and digital innovation.</p>
+        </div>
+
+        <div class="client-card reveal">
+          <div class="client-card__icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="#4abe5c" stroke-width="2"/><path d="M16 4C16 4 20 10 20 16C20 22 16 28 16 28" stroke="#4abe5c" stroke-width="1.5"/><path d="M16 4C16 4 12 10 12 16C12 22 16 28 16 28" stroke="#4abe5c" stroke-width="1.5"/><path d="M4 16H28" stroke="#4abe5c" stroke-width="1.5"/></svg>
+          </div>
+          <h3>DFIs</h3>
+          <p>IFC, AfDB, SMEDAN, CBN and bilateral DFIs seeking deployment infrastructure for MSME and innovation mandates.</p>
+        </div>
+
+        <div class="client-card reveal">
+          <div class="client-card__icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><polygon points="16,4 28,12 28,28 4,28 4,12" stroke="#4abe5c" stroke-width="2" fill="none"/><rect x="12" y="18" width="8" height="10" rx="1" stroke="#4abe5c" stroke-width="1.5"/><path d="M9 12H23" stroke="#4abe5c" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Government</h3>
+          <p>Ministries, state agencies, and export/trade bodies with formal innovation, digitisation, or SME mandate goals.</p>
+        </div>
+
+        <div class="client-card reveal">
+          <div class="client-card__icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 24L16 8L24 24" stroke="#4abe5c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 19H21" stroke="#4abe5c" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Market Entry</h3>
+          <p>Multinationals who need local ecosystem intelligence, trusted partnerships, and supplier/distributor development.</p>
+        </div>
+
+        <div class="client-card reveal">
+          <div class="client-card__icon">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M6 24C6 18.477 10.477 14 16 14C21.523 14 26 18.477 26 24" stroke="#4abe5c" stroke-width="2"/><circle cx="16" cy="9" r="5" stroke="#4abe5c" stroke-width="2"/></svg>
+          </div>
+          <h3>Universities</h3>
+          <p>Institutions building tech transfer offices, student venture pipelines, and industry-academia collaboration.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ CASE STUDIES ═══════════════════════════════ -->
+  <section class="work section--charcoal" id="work">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="label">Case Studies</p>
+        <h2>What we've built</h2>
+      </div>
+      <div class="work__grid">
+
+        <div class="case-card reveal">
+          <div class="case-card__type">Hackathon &amp; Program Management</div>
+          <h3 class="case-card__title">Youth Banking Innovation Program</h3>
+          <p class="case-card__body">End-to-end design and execution of a national youth fintech challenge for a leading Nigerian bank.</p>
+          <ul class="case-card__list">
+            <li>Programme design — theme, judging criteria, prize structure, partnership activation</li>
+            <li>Venture sourcing — marketing, application management, screening and cohort curation</li>
+            <li>Bespoke platform for automated scoring and public judging</li>
+            <li>Demo Day delivery — branded event, live pitch judging, media coverage</li>
+          </ul>
+          <a href="https://innovatex.africa" class="case-card__link" target="_blank" rel="noopener">Innovatex.africa →</a>
+        </div>
+
+        <div class="case-card reveal">
+          <div class="case-card__type">Hub Operationalization &amp; Management</div>
+          <h3 class="case-card__title">Hub One — Yaba, Lagos</h3>
+          <p class="case-card__body">Design, launch and ongoing management of a premium co-working and innovation hub in the heart of Lagos' tech district.</p>
+          <ul class="case-card__list">
+            <li>Membership model, programming calendar, community management</li>
+            <li>30 workstations · 7 space types · 2 private offices · 24/7 AI infrastructure</li>
+            <li>Weekly events, resident cohorts, mentor-in-residence activations</li>
+            <li>Real-time reporting on startups supported, jobs created, deals closed</li>
+          </ul>
+          <a href="https://hubone.heaveventures.com" class="case-card__link" target="_blank" rel="noopener">hubone.heaveventures.com →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ PROPRIETARY SOFTWARE ═══════════════════════════════ -->
+  <section class="software section--dark" id="software">
+    <div class="container software__inner">
+      <div class="software__label reveal">
+        <p class="label">SME Financing Engine</p>
+        <h2>Our Proprietary<br/>Software</h2>
+      </div>
+      <div class="software__card reveal">
+        <div class="zimara__header">
+          <div class="zimara__brand">
+            <span class="zimara__name">Zimara.org</span>
+            <span class="zimara__tagline">Train. Score. Finance.</span>
+            <span class="zimara__sub">Africa's SME Creditworthiness Engine</span>
+          </div>
+        </div>
+        <div class="zimara__features">
+          <div class="zimara__feature">
+            <div class="zimara__feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#4abe5c" stroke-width="2"/><path d="M8 12L11 15L16 9" stroke="#4abe5c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <h4>SME Training Platform</h4>
+              <p>6 structured pillars — financial literacy, revenue design, marketing, operations, governance, and access to finance.</p>
+            </div>
+          </div>
+          <div class="zimara__feature">
+            <div class="zimara__feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L15 8H21L16 12L18 18L12 14L6 18L8 12L3 8H9L12 2Z" stroke="#4abe5c" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <h4>The Zimara Score</h4>
+              <p>A proprietary SME readiness score — forward-looking, lender-trusted, and richer than any credit bureau output.</p>
+            </div>
+          </div>
+          <div class="zimara__feature">
+            <div class="zimara__feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 22C17.523 22 22 17.523 22 12H12V2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22Z" stroke="#4abe5c" stroke-width="2"/></svg>
+            </div>
+            <div>
+              <h4>Blended Finance Facility</h4>
+              <p>Top graduates pitch at Bootcamp and access grants, loans, and equity from our DFI, bank, and investor network.</p>
+            </div>
+          </div>
+          <div class="zimara__feature">
+            <div class="zimara__feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#4abe5c" stroke-width="2"/><path d="M12 8V16M8 12H16" stroke="#4abe5c" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <h4>Open for Partnership</h4>
+              <p>Corporates, DFIs, and governments can co-brand, fund the facility, or run a 90-day pilot cohort with their SME base.</p>
+            </div>
+          </div>
+        </div>
+        <a href="https://zimara.org" class="btn btn--primary zimara__cta" target="_blank" rel="noopener">Visit Zimara.org →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ WHY HEAVE VENTURES ═══════════════════════════════ -->
+  <section class="why-heave section--dark-green" id="why-heave">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="label">Why Heave Ventures</p>
+        <h2>What makes us<br/>different</h2>
+      </div>
+      <div class="why-heave__grid">
+
+        <div class="differentiator reveal">
+          <span class="differentiator__num">01</span>
+          <h3>A Published Methodology</h3>
+          <p>The "Open-Innovation is African" framework gives every Heave engagement a proven intellectual backbone — not gut feel or borrowed Western templates. We wrote the book.</p>
+        </div>
+
+        <div class="differentiator reveal">
+          <span class="differentiator__num">02</span>
+          <h3>Proprietary Software</h3>
+          <p>Zimara.org is a live platform with its own scoring model and financing pipeline. Most African OI firms have no IP of their own.</p>
+        </div>
+
+        <div class="differentiator reveal">
+          <span class="differentiator__num">03</span>
+          <h3>Native to Africa, Globally Connected</h3>
+          <p>Deep Nigeria roots with active cross-border programming in Francophone West Africa and beyond. We don't map African markets onto foreign models.</p>
+        </div>
+
+        <div class="differentiator reveal">
+          <span class="differentiator__num">04</span>
+          <h3>AI-Native</h3>
+          <p>Every Heave engagement includes AI-native tooling — programme automation to ecosystem intelligence dashboards. This isn't a feature we're adding; it's how we work.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ CTA / CONTACT ═══════════════════════════════ -->
+  <section class="contact section--dark" id="contact">
+    <div class="contact__geo" aria-hidden="true">
+      <svg viewBox="0 0 400 400" fill="none" preserveAspectRatio="xMidYMid slice">
+        <polygon points="0,0 200,0 0,200" fill="#1b4d27" opacity="0.7"/>
+        <polygon points="200,0 400,0 400,200" fill="#2d7a3a" opacity="0.5"/>
+        <polygon points="0,200 200,400 0,400" fill="#2d7a3a" opacity="0.5"/>
+        <polygon points="200,400 400,200 400,400" fill="#1b4d27" opacity="0.7"/>
+      </svg>
+    </div>
+    <div class="container contact__inner reveal">
+      <h2>Let's build together</h2>
+      <p>Ready to design, build, or operate your innovation infrastructure? We'd love to hear from you.</p>
+      <div class="contact__actions">
+        <a href="mailto:theteam@heaveventures.com" class="btn btn--primary btn--lg">theteam@heaveventures.com</a>
+        <a href="tel:+2349022618668" class="btn btn--ghost btn--lg">+234 902 261 8668</a>
+      </div>
+      <p class="contact__url">www.heaveventures.com</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="nav__logo">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect width="14" height="14" fill="#4abe5c"/><rect x="18" width="14" height="14" fill="#2d7a3a"/><rect y="18" width="14" height="14" fill="#2d7a3a"/><rect x="18" y="18" width="14" height="14" fill="#4abe5c"/><polygon points="0,14 14,0 14,14" fill="#1a1a1a"/><polygon points="18,14 32,0 32,14" fill="#1a1a1a"/><polygon points="0,18 14,32 14,18" fill="#1a1a1a"/><polygon points="18,18 32,32 32,18" fill="#1a1a1a"/></svg>
+          <span>Heave<strong>Ventures</strong></span>
+        </a>
+        <p>Designing, building and operating<br/>Africa's innovation infrastructure.</p>
+      </div>
+      <nav class="footer__nav">
+        <div class="footer__col">
+          <span class="footer__col-title">Company</span>
+          <a href="#about">About</a>
+          <a href="#why">Why We Exist</a>
+          <a href="#why-heave">Why Heave</a>
+        </div>
+        <div class="footer__col">
+          <span class="footer__col-title">Services</span>
+          <a href="#services">Project Delivery</a>
+          <a href="#services">Program Management</a>
+          <a href="#services">Hub Management</a>
+          <a href="#services">AI-Native</a>
+        </div>
+        <div class="footer__col">
+          <span class="footer__col-title">Products</span>
+          <a href="https://zimara.org" target="_blank" rel="noopener">Zimara.org</a>
+          <a href="https://hubone.heaveventures.com" target="_blank" rel="noopener">Hub One</a>
+          <a href="https://innovatex.africa" target="_blank" rel="noopener">InnovateX</a>
+          <a href="#software">VentureOS</a>
+        </div>
+        <div class="footer__col">
+          <span class="footer__col-title">Connect</span>
+          <a href="mailto:theteam@heaveventures.com">theteam@heaveventures.com</a>
+          <a href="tel:+2349022618668">+234 902 261 8668</a>
+          <a href="#work">Case Studies</a>
+        </div>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      <span>© 2026 Heave Ventures. All rights reserved.</span>
+      <span>Yaba, Lagos · Nigeria</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
