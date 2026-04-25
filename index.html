@@ -1,371 +1,470 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Heave Ventures — Africa's Innovation Infrastructure</title>
-  <meta name="description" content="Heave Ventures designs, builds and operates Africa's innovation infrastructure — connecting the continent's largest institutions to the startup and talent ecosystems solving their hardest problems." />
+  <meta name="description" content="Heave Ventures designs, builds and operates Africa's innovation infrastructure — connecting the continent's largest institutions to the startup ecosystems solving their hardest problems." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { serif: ['Newsreader', 'Georgia', 'serif'] },
+          colors: {
+            'hv-bg':    '#141414',
+            'hv-green': '#1F6B3A',
+            'hv-cream': '#E7E2DA',
+            'hv-teal':  '#1D7277',
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet" />
 
-  <!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
-  <header class="nav" id="nav">
-    <div class="container nav__inner">
-      <a href="#" class="nav__logo">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="14" height="14" fill="#4abe5c"/>
-          <rect x="18" width="14" height="14" fill="#2d7a3a"/>
-          <rect y="18" width="14" height="14" fill="#2d7a3a"/>
-          <rect x="18" y="18" width="14" height="14" fill="#4abe5c"/>
-          <polygon points="0,14 14,0 14,14" fill="#121212"/>
-          <polygon points="18,14 32,0 32,14" fill="#121212"/>
-          <polygon points="0,18 14,32 14,18" fill="#121212"/>
-          <polygon points="18,18 32,32 32,18" fill="#121212"/>
-        </svg>
-        <span>Heave<strong>Ventures</strong></span>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .font-serif-news { font-family: 'Newsreader', serif; }
+    /* Marquee */
+    .marquee-track { animation: marquee 32s linear infinite; }
+    .marquee-track:hover { animation-play-state: paused; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  </style>
+</head>
+
+<body class="bg-[#141414] text-[#E7E2DA] antialiased relative overflow-x-hidden selection:bg-[#1F6B3A] selection:text-white">
+
+  <!-- ─── Background: dot grid ──────────────────────── -->
+  <div class="fixed inset-0 z-0 pointer-events-none opacity-[0.14]"
+       style="background-image:radial-gradient(#E7E2DA 1px,transparent 1px);background-size:32px 32px;"></div>
+
+  <!-- ─── Background: green radial glow ────────────── -->
+  <div class="fixed top-0 right-0 w-[80vw] h-[80vh] rounded-full bg-[#1F6B3A]/10 blur-[150px] pointer-events-none mix-blend-screen z-0 translate-x-1/4 -translate-y-1/4"></div>
+
+  <!-- ─── Container lines overlay ──────────────────── -->
+  <div class="pointer-events-none fixed inset-0 flex justify-center z-50 opacity-[0.18] mix-blend-overlay hidden md:flex">
+    <div class="w-full max-w-[1400px] border-x border-[#E7E2DA]/10 h-full relative">
+      <div class="absolute left-[25%] top-0 bottom-0 border-l border-[#E7E2DA]/10"></div>
+      <div class="absolute left-[50%] top-0 bottom-0 border-l border-[#E7E2DA]/10"></div>
+      <div class="absolute left-[75%] top-0 bottom-0 border-l border-[#E7E2DA]/10"></div>
+      <div class="absolute -left-[3px] top-24 w-[5px] h-[5px] border border-[#E7E2DA]/40 bg-[#141414]"></div>
+      <div class="absolute -right-[3px] top-24 w-[5px] h-[5px] border border-[#E7E2DA]/40 bg-[#141414]"></div>
+      <div class="absolute -left-[3px] bottom-24 w-[5px] h-[5px] border border-[#E7E2DA]/40 bg-[#141414]"></div>
+      <div class="absolute -right-[3px] bottom-24 w-[5px] h-[5px] border border-[#E7E2DA]/40 bg-[#141414]"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+  <header class="sticky top-0 z-40 w-full border-b border-[#E7E2DA]/10 bg-[#141414]/85 backdrop-blur-md">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between h-20">
+
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="flex gap-[3px] h-6 items-end">
+          <div class="w-2.5 h-5 bg-white -skew-x-12 transition-transform group-hover:scale-y-110 origin-bottom"></div>
+          <div class="w-2.5 h-6 bg-white -skew-x-12 transition-transform group-hover:scale-y-110 origin-bottom delay-75"></div>
+          <div class="w-2.5 h-4 bg-[#1F6B3A] -skew-x-12 transition-transform group-hover:scale-y-110 origin-bottom delay-150"></div>
+        </div>
+        <span class="font-medium text-[1.05rem] tracking-tight text-white">HeaveVentures</span>
       </a>
-      <nav class="nav__links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#approach">Approach</a>
-        <a href="#clients">Clients</a>
-        <a href="#work">Work</a>
-        <a href="#contact" class="nav__cta">Let's build →</a>
+
+      <nav class="hidden md:flex items-center gap-10 text-sm text-[#E7E2DA]/70">
+        <a href="#about"    class="hover:text-white transition-colors">About</a>
+        <a href="#services" class="hover:text-white transition-colors">Services</a>
+        <a href="#approach" class="hover:text-white transition-colors">Approach</a>
+        <a href="#clients"  class="hover:text-white transition-colors">Clients</a>
+        <a href="#work"     class="hover:text-white transition-colors">Work</a>
       </nav>
-      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
+
+      <a href="mailto:theteam@heaveventures.com"
+         class="hidden md:flex items-center gap-2 border border-[#E7E2DA]/20 hover:border-[#1F6B3A]/60 hover:bg-[#1F6B3A]/8 text-xs font-medium uppercase tracking-widest px-6 py-2.5 rounded-[4px] transition-all text-[#E7E2DA]">
+        Let's Build
+      </a>
+
+      <button id="menu-btn" class="md:hidden text-white p-1">
+        <iconify-icon icon="solar:hamburger-menu-linear" width="24"></iconify-icon>
       </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden border-t border-[#E7E2DA]/10 px-6 py-4 bg-[#141414]/97">
+      <nav class="flex flex-col text-sm text-[#E7E2DA]/70">
+        <a href="#about"    class="py-3 border-b border-[#E7E2DA]/8 hover:text-white transition-colors">About</a>
+        <a href="#services" class="py-3 border-b border-[#E7E2DA]/8 hover:text-white transition-colors">Services</a>
+        <a href="#approach" class="py-3 border-b border-[#E7E2DA]/8 hover:text-white transition-colors">Approach</a>
+        <a href="#clients"  class="py-3 border-b border-[#E7E2DA]/8 hover:text-white transition-colors">Clients</a>
+        <a href="#work"     class="py-3 border-b border-[#E7E2DA]/8 hover:text-white transition-colors">Work</a>
+        <a href="mailto:theteam@heaveventures.com" class="py-3 text-[#1F6B3A] font-medium">Let's Build →</a>
+      </nav>
     </div>
   </header>
 
   <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
-  <section class="hero" id="home">
-    <div class="hero__geo" aria-hidden="true">
-      <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-        <!-- 5×5 triangle grid like the deck -->
-        <g opacity="0.9">
-          <!-- Row 1 -->
-          <polygon points="0,0 120,0 0,120" fill="#1b4d27"/>
-          <polygon points="120,0 240,0 120,120" fill="#2d7a3a"/>
-          <polygon points="240,0 360,0 240,120" fill="#4abe5c"/>
-          <polygon points="360,0 480,0 360,120" fill="#2d7a3a"/>
-          <polygon points="480,0 600,0 480,120" fill="#1b4d27"/>
-          <polygon points="120,0 240,0 240,120" fill="#2d7a3a"/>
-          <polygon points="240,0 360,0 360,120" fill="#1b4d27"/>
-          <polygon points="360,0 480,0 480,120" fill="#4abe5c"/>
-          <polygon points="480,0 600,0 600,120" fill="#2d7a3a"/>
-          <!-- Row 2 -->
-          <polygon points="0,120 120,120 0,240" fill="#2d7a3a"/>
-          <polygon points="120,120 240,120 120,240" fill="#4abe5c"/>
-          <polygon points="240,120 360,120 240,240" fill="#1b4d27"/>
-          <polygon points="360,120 480,120 360,240" fill="#4abe5c"/>
-          <polygon points="480,120 600,120 480,240" fill="#2d7a3a"/>
-          <polygon points="120,120 240,120 240,240" fill="#1b4d27"/>
-          <polygon points="240,120 360,120 360,240" fill="#2d7a3a"/>
-          <polygon points="360,120 480,120 480,240" fill="#1b4d27"/>
-          <polygon points="480,120 600,120 600,240" fill="#4abe5c"/>
-          <!-- Row 3 -->
-          <polygon points="0,240 120,240 0,360" fill="#4abe5c"/>
-          <polygon points="120,240 240,240 120,360" fill="#1b4d27"/>
-          <polygon points="240,240 360,240 240,360" fill="#2d7a3a"/>
-          <polygon points="360,240 480,240 360,360" fill="#1b4d27"/>
-          <polygon points="480,240 600,240 480,360" fill="#4abe5c"/>
-          <polygon points="120,240 240,240 240,360" fill="#2d7a3a"/>
-          <polygon points="240,240 360,240 360,360" fill="#4abe5c"/>
-          <polygon points="360,240 480,240 480,360" fill="#2d7a3a"/>
-          <polygon points="480,240 600,240 600,360" fill="#1b4d27"/>
-          <!-- Row 4 -->
-          <polygon points="0,360 120,360 0,480" fill="#1b4d27"/>
-          <polygon points="120,360 240,360 120,480" fill="#2d7a3a"/>
-          <polygon points="240,360 360,360 240,480" fill="#4abe5c"/>
-          <polygon points="360,360 480,360 360,480" fill="#2d7a3a"/>
-          <polygon points="480,360 600,360 480,480" fill="#1b4d27"/>
-          <polygon points="120,360 240,360 240,480" fill="#4abe5c"/>
-          <polygon points="240,360 360,360 360,480" fill="#1b4d27"/>
-          <polygon points="360,360 480,360 480,480" fill="#4abe5c"/>
-          <polygon points="480,360 600,360 600,480" fill="#2d7a3a"/>
-          <!-- Row 5 -->
-          <polygon points="0,480 120,480 0,600" fill="#2d7a3a"/>
-          <polygon points="120,480 240,480 120,600" fill="#4abe5c"/>
-          <polygon points="240,480 360,480 240,600" fill="#1b4d27"/>
-          <polygon points="360,480 480,480 360,600" fill="#4abe5c"/>
-          <polygon points="480,480 600,480 480,600" fill="#2d7a3a"/>
-          <polygon points="120,480 240,480 240,600" fill="#1b4d27"/>
-          <polygon points="240,480 360,480 360,600" fill="#2d7a3a"/>
-          <polygon points="360,480 480,480 480,600" fill="#1b4d27"/>
-          <polygon points="480,480 600,480 600,600" fill="#4abe5c"/>
-        </g>
-      </svg>
+  <section class="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 pt-32 pb-32 md:pt-44 md:pb-36 min-h-[88vh] flex flex-col justify-center">
+
+    <div class="flex items-center gap-3 mb-10 fade-up">
+      <div class="w-1.5 h-1.5 rounded-full bg-[#1F6B3A] shadow-[0_0_8px_#1F6B3A]"></div>
+      <span class="text-xs uppercase tracking-widest text-[#E7E2DA]/65 font-medium">Open Innovation Infrastructure · Yaba, Lagos</span>
     </div>
-    <div class="container">
-      <div class="hero__content">
-        <p class="hero__eyebrow reveal">Africa's Leading Open Innovation Firm</p>
-        <h1 class="hero__headline reveal">
-          We design, build<br/>
-          and operate Africa's<br/>
-          innovation
-          <span class="text-green">infrastructure.</span>
+
+    <div class="flex flex-col lg:flex-row justify-between gap-16 lg:gap-8 items-start">
+
+      <!-- Headline -->
+      <div class="lg:w-[60%]">
+        <h1 class="text-5xl md:text-[4.5rem] lg:text-[5.25rem] tracking-tight leading-[1.06] mb-8">
+          <span class="overflow-hidden inline-block pb-1"><span class="reveal-word inline-block text-white font-normal">We design,</span></span>
+          <span class="overflow-hidden inline-block pb-1"><span class="reveal-word inline-block text-white font-normal"> build and</span></span><br class="hidden sm:block"/>
+          <span class="overflow-hidden inline-block pb-1"><span class="reveal-word inline-block text-white font-normal">operate Africa's</span></span><br/>
+          <span class="overflow-hidden inline-block pb-1"><span class="reveal-word inline-block text-white font-normal">innovation</span></span>
+          <span class="overflow-hidden inline-block pb-1"><span class="reveal-word inline-block font-serif-news italic font-light text-[#1F6B3A]">infrastructure.</span></span>
         </h1>
-        <p class="hero__sub reveal">Connecting the continent's largest institutions to the startup<br class="br-lg"/> and talent ecosystems solving their hardest problems.</p>
-        <div class="hero__actions reveal">
-          <a href="#services" class="btn btn--primary">Explore our work</a>
-          <a href="#contact" class="btn btn--ghost">Let's build together →</a>
+
+        <p class="text-lg md:text-xl text-[#E7E2DA]/60 max-w-lg leading-relaxed mb-12 fade-up">
+          We connect Africa's largest institutions to the startup and talent ecosystems solving their hardest problems — across Nigeria, Francophone West Africa and East Africa.
+        </p>
+
+        <div class="flex flex-wrap gap-4 fade-up">
+          <a href="#services"
+             class="bg-[#E7E2DA] hover:bg-white text-[#141414] px-8 py-4 rounded-[4px] text-sm font-medium transition-colors flex items-center gap-2.5">
+            Explore Our Work
+            <iconify-icon icon="solar:arrow-right-linear" width="17"></iconify-icon>
+          </a>
+          <div class="relative p-[1px] rounded-[4px] overflow-hidden group inline-block">
+            <div class="absolute inset-0 bg-gradient-to-r from-[#1F6B3A] via-[#E7E2DA]/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <a href="mailto:theteam@heaveventures.com"
+               class="relative block bg-[#141414] hover:bg-[#161616] text-[#E7E2DA] px-8 py-4 rounded-[3px] text-sm font-normal transition-colors">
+              Let's Build Together
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="hero__scroll" aria-hidden="true">
-      <span></span>
+
+      <!-- Stats -->
+      <div class="lg:w-[28%] flex flex-col gap-12 lg:pt-6">
+        <div class="fade-up">
+          <p class="text-xs uppercase tracking-widest text-[#E7E2DA]/45 font-medium mb-2">Years of Open Innovation</p>
+          <div class="font-serif-news italic font-light text-white tracking-tight flex items-baseline gap-1 text-[5rem] leading-none">
+            7<span class="text-3xl text-[#1F6B3A]">+</span>
+          </div>
+        </div>
+        <div class="fade-up">
+          <p class="text-xs uppercase tracking-widest text-[#E7E2DA]/45 font-medium mb-2">Startups in Community</p>
+          <div class="font-serif-news italic font-light text-white tracking-tight flex items-baseline gap-1 text-[5rem] leading-none">
+            25<span class="text-3xl text-[#1F6B3A]">k</span>
+          </div>
+        </div>
+        <div class="fade-up">
+          <p class="text-xs uppercase tracking-widest text-[#E7E2DA]/45 font-medium mb-2">Active Regions</p>
+          <div class="font-serif-news italic font-light text-white tracking-tight text-[5rem] leading-none">3</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- ═══════════════════════════════ ABOUT / STATS ═══════════════════════════════ -->
-  <section class="about section--dark-green" id="about">
-    <div class="container about__grid">
-      <div class="about__copy reveal">
-        <p class="label">Who We Are</p>
-        <h2>Africa's leading<br/>Open Innovation firm</h2>
-        <p class="body-lg">Heave Ventures builds the infrastructure that connects the continent's largest institutions to the startup and talent ecosystems solving their hardest problems.</p>
-        <p class="body-md">Our HQ is Yaba, Lagos — with active programmes across Nigeria, Francophone West Africa and East Africa.</p>
-      </div>
-      <div class="about__stats reveal">
-        <div class="stat-card">
-          <span class="stat-card__number">7<span class="stat-card__plus">+</span></span>
-          <span class="stat-card__label">Years building Africa's open-innovation ecosystem</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-card__number">25<span class="stat-card__suffix">k</span></span>
-          <span class="stat-card__label">Startups active in our community</span>
-        </div>
-        <div class="stat-card stat-card--wide">
-          <div class="stat-card__dot-grid" aria-hidden="true">
-            <svg viewBox="0 0 200 120" fill="none">
-              <g fill="#4abe5c">
-                <circle cx="10" cy="10" r="6"/><circle cx="30" cy="10" r="5"/><circle cx="50" cy="10" r="4"/><circle cx="70" cy="10" r="3"/><circle cx="90" cy="10" r="2"/>
-                <circle cx="10" cy="30" r="5"/><circle cx="30" cy="30" r="4"/><circle cx="50" cy="30" r="3"/><circle cx="70" cy="30" r="2.5"/><circle cx="90" cy="30" r="1.5"/>
-                <circle cx="10" cy="50" r="4"/><circle cx="30" cy="50" r="3.5"/><circle cx="50" cy="50" r="2.5"/><circle cx="70" cy="50" r="1.5"/>
-                <circle cx="10" cy="70" r="3"/><circle cx="30" cy="70" r="2.5"/><circle cx="50" cy="70" r="2"/>
-                <circle cx="10" cy="90" r="2"/><circle cx="30" cy="90" r="1.5"/>
-                <circle cx="10" cy="110" r="1.5"/>
-              </g>
-            </svg>
-          </div>
-          <div class="stat-card__location">
-            <svg width="20" height="24" viewBox="0 0 20 24" fill="none"><path d="M10 0C4.477 0 0 4.477 0 10C0 17.5 10 24 10 24C10 24 20 17.5 20 10C20 4.477 15.523 0 10 0ZM10 13C8.343 13 7 11.657 7 10C7 8.343 8.343 7 10 7C11.657 7 13 8.343 13 10C13 11.657 11.657 13 10 13Z" fill="#4abe5c"/></svg>
-            <span>Yaba, Lagos · Nigeria · Francophone West Africa · East Africa</span>
-          </div>
-        </div>
-      </div>
+  <!-- ─── Marquee ────────────────────────────────────── -->
+  <div class="relative z-10 border-y border-[#E7E2DA]/10 bg-[#1F6B3A]/5 overflow-hidden py-4">
+    <div class="marquee-track flex gap-16 whitespace-nowrap w-max">
+      <!-- set 1 -->
+      <span class="text-[11px] uppercase tracking-widest text-[#E7E2DA]/45 font-medium">Project Delivery</span>
+      <span class="text-[#1F6B3A]">✦</span>
+      <span class="text-[11px] uppercase tracking-widest text-[#E7E2DA]/45 font-medium">Program Management</span>
+      <span class="text-[#1F6B3A]">✦</span>
+      <span class="text-[11px] uppercase tracking-widest text-[#E7E2DA]/45 font-medium">Hub &amp; Labs Management</span>
+      <span class="text-[#1F6B3A]">✦</span>
+      <span class="text-[11px] uppercase tracking-widest text-[#E7E2DA]/45 font-medium">Event Management</span>
+      <span class="text-[#1F6B3A]">✦</span>
+      <span class="text-[11px] uppercase tracking-widest text-[#E7E2DA]/45 font-medium">Product Development</span>
+      <span class="text-[#1F6B3A]">✦</span>
+      <span class="text-[11px] uppercase tracking-widest text-[#E7E2DA]/45 font-medium">AI-Native Implementation</span>
+      <span class="text-[#1F6B3A]">✦</span>
+      <span class="text-[11px] uppercase tracking-widest text-[#E7E2DA]/45 font-medium">Open Innovation</span>
+      <span class="text-[#1F6B3A]">✦</span>
+      <span class="text-[11px] uppercase tracking-widest text-[#E7E2DA]/45 font-medium">Startup Ecosystems</span>
+      <span class="text-[#1F6B3A]">✦</span>
+      <span class="text-[11px] uppercase tracking-widest text-[#E7E2DA]/45 font-medium">Corporate Innovation</span>
+      <span class="text-[#1F6B3A]">✦</span>
+      <!-- set 2 (duplicate for seamless loop) -->
+      <span class="text-[11px] uppercase tracking-widest text-[#E7E2DA]/45 font-medium">Project Delivery</span>
+      <span class="text-[#1F6B3A]">✦</span>
+      <span class="text-[11px] uppercase tracking-widest text-[#E7E2DA]/45 font-medium">Program Management</span>
+      <span class="text-[#1F6B3A]">✦</span>
+      <span class="text-[11px] uppercase tracking-widest text-[#E7E2DA]/45 font-medium">Hub &amp; Labs Management</span>
+      <span class="text-[#1F6B3A]">✦</span>
+      <span class="text-[11px] uppercase tracking-widest text-[#E7E2DA]/45 font-medium">Event Management</span>
+      <span class="text-[#1F6B3A]">✦</span>
+      <span class="text-[11px] uppercase tracking-widest text-[#E7E2DA]/45 font-medium">Product Development</span>
+      <span class="text-[#1F6B3A]">✦</span>
+      <span class="text-[11px] uppercase tracking-widest text-[#E7E2DA]/45 font-medium">AI-Native Implementation</span>
+      <span class="text-[#1F6B3A]">✦</span>
+      <span class="text-[11px] uppercase tracking-widest text-[#E7E2DA]/45 font-medium">Open Innovation</span>
+      <span class="text-[#1F6B3A]">✦</span>
+      <span class="text-[11px] uppercase tracking-widest text-[#E7E2DA]/45 font-medium">Startup Ecosystems</span>
+      <span class="text-[#1F6B3A]">✦</span>
+      <span class="text-[11px] uppercase tracking-widest text-[#E7E2DA]/45 font-medium">Corporate Innovation</span>
+      <span class="text-[#1F6B3A]">✦</span>
     </div>
-  </section>
+  </div>
 
   <!-- ═══════════════════════════════ WHY WE EXIST ═══════════════════════════════ -->
-  <section class="why section--dark" id="why">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="label">Why We Exist</p>
-        <h2>The problems<br/>we were built to solve</h2>
+  <section id="about" class="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 py-24 md:py-32">
+
+    <div class="flex items-center gap-3 mb-16 fade-up">
+      <iconify-icon icon="solar:buildings-3-linear" width="18" class="text-[#1F6B3A]"></iconify-icon>
+      <span class="text-xs uppercase tracking-widest text-[#E7E2DA]/65 font-medium">Why We Exist</span>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mb-16">
+      <h2 class="text-4xl md:text-5xl font-normal tracking-tight leading-[1.15] fade-up">
+        Three problems <br/>
+        <span class="font-serif-news italic font-light text-[#E7E2DA]/65">Africa refused to wait for.</span>
+      </h2>
+      <p class="text-base text-[#E7E2DA]/55 leading-relaxed max-w-md fade-up">
+        The continent's largest institutions are being disrupted. Innovation programmes keep dying. Western frameworks simply don't work here. We built Heave Ventures to fix all three.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-[3px]">
+
+      <div class="relative p-[1px] rounded-[4px] group fade-up">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#1F6B3A]/18 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-[4px]"></div>
+        <div class="relative bg-[#141414]/75 backdrop-blur-md border border-[#E7E2DA]/10 group-hover:border-[#1F6B3A]/30 rounded-[4px] p-10 h-full transition-colors duration-500">
+          <div class="text-6xl font-serif-news italic font-light text-[#1F6B3A]/25 mb-6 leading-none">01</div>
+          <h3 class="text-lg font-normal text-white mb-4 leading-snug">Africa's Biggest Institutions Are Being Disrupted</h3>
+          <p class="text-sm text-[#E7E2DA]/55 leading-relaxed">Banks, telcos, insurers and energy companies face startup disruption from every direction — yet most have no structured way to engage, co-build, or invest in the solutions threatening them.</p>
+        </div>
       </div>
-      <div class="why__grid">
-        <div class="why-card reveal">
-          <div class="why-card__icon">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="4" fill="#1b4d27"/><path d="M8 28L16 20L22 26L32 14" stroke="#4abe5c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="8" y="8" width="8" height="6" rx="1" fill="#4abe5c" opacity="0.5"/></svg>
-          </div>
-          <h3>Africa's Biggest Institutions Are Being Disrupted</h3>
-          <p>Banks, telcos, insurers and energy companies face startup disruption from every direction — yet most have no structured way to engage, co-build, or invest in the solutions threatening them.</p>
+
+      <div class="relative p-[1px] rounded-[4px] group fade-up">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#1F6B3A]/18 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-[4px]"></div>
+        <div class="relative bg-[#141414]/75 backdrop-blur-md border border-[#E7E2DA]/10 group-hover:border-[#1F6B3A]/30 rounded-[4px] p-10 h-full transition-colors duration-500">
+          <div class="text-6xl font-serif-news italic font-light text-[#1F6B3A]/25 mb-6 leading-none">02</div>
+          <h3 class="text-lg font-normal text-white mb-4 leading-snug">Innovation Programmes Die Without Infrastructure</h3>
+          <p class="text-sm text-[#E7E2DA]/55 leading-relaxed">Most 'innovation' in Africa stops at the hackathon. Without programme continuity, hub management, and commercial pathways, good ideas never become real businesses.</p>
         </div>
-        <div class="why-card reveal">
-          <div class="why-card__icon">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="4" fill="#1b4d27"/><path d="M20 8V20M14 14L20 8L26 14" stroke="#4abe5c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="10" y="22" width="20" height="10" rx="2" fill="#4abe5c" opacity="0.3"/><path d="M14 27H26" stroke="#4abe5c" stroke-width="2" stroke-linecap="round"/><path d="M14 30H22" stroke="#4abe5c" stroke-width="2" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Innovation Programmes Die Without Infrastructure</h3>
-          <p>Most 'innovation' in Africa stops at the hackathon. Without programme continuity, hub management, and commercial pathways, good ideas never become real businesses.</p>
+      </div>
+
+      <div class="relative p-[1px] rounded-[4px] group fade-up">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#1F6B3A]/18 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-[4px]"></div>
+        <div class="relative bg-[#141414]/75 backdrop-blur-md border border-[#E7E2DA]/10 group-hover:border-[#1F6B3A]/30 rounded-[4px] p-10 h-full transition-colors duration-500">
+          <div class="text-6xl font-serif-news italic font-light text-[#1F6B3A]/25 mb-6 leading-none">03</div>
+          <h3 class="text-lg font-normal text-white mb-4 leading-snug">The Silicon Valley Model Does Not Fit Africa's Tropical Savannah</h3>
+          <p class="text-sm text-[#E7E2DA]/55 leading-relaxed">Western frameworks don't map onto African market realities — informal networks, infrastructure gaps, policy constraints, and trust dynamics require a native approach.</p>
         </div>
-        <div class="why-card reveal">
-          <div class="why-card__icon">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="4" fill="#1b4d27"/><circle cx="20" cy="20" r="10" stroke="#4abe5c" stroke-width="2.5"/><path d="M15 20C15 17.239 17.239 15 20 15C22.761 15 25 17.239 25 20" stroke="#4abe5c" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="20" r="3" fill="#4abe5c"/></svg>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ SERVICES ═══════════════════════════════ -->
+  <section id="services" class="relative z-10 w-full border-y border-[#E7E2DA]/10 bg-[#141414]/55 backdrop-blur-md">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12 py-24 md:py-32">
+
+      <div class="flex items-center gap-3 mb-16 fade-up">
+        <iconify-icon icon="solar:widget-5-linear" width="18" class="text-[#1F6B3A]"></iconify-icon>
+        <span class="text-xs uppercase tracking-widest text-[#E7E2DA]/65 font-medium">What We Do</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mb-16">
+        <h2 class="text-4xl md:text-5xl font-normal tracking-tight leading-[1.15] fade-up">
+          Six capabilities. <br/>
+          <span class="font-serif-news italic font-light text-[#E7E2DA]/65">One end-to-end partner.</span>
+        </h2>
+        <p class="text-base text-[#E7E2DA]/55 leading-relaxed max-w-md fade-up">
+          We don't pick one lane. Our model spans the full innovation lifecycle — from strategy to delivery, from digital platforms to physical hubs.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[3px]">
+
+        <div class="group border border-[#E7E2DA]/10 hover:border-[#1F6B3A]/40 rounded-[4px] p-10 bg-[#141414]/40 hover:bg-[#1F6B3A]/5 transition-all duration-500 fade-up flex flex-col gap-5">
+          <div class="w-10 h-10 rounded-[4px] border border-[#1F6B3A]/30 flex items-center justify-center group-hover:border-[#1F6B3A] group-hover:bg-[#1F6B3A]/10 transition-all">
+            <iconify-icon icon="solar:lightbulb-bolt-linear" width="20" class="text-[#1F6B3A]"></iconify-icon>
           </div>
-          <h3>The Silicon Valley Model Does Not Fit Africa's Tropical Savannah</h3>
-          <p>Western frameworks don't map onto African market realities — informal networks, infrastructure gaps, policy constraints, and trust dynamics require a native approach.</p>
+          <div class="flex-1">
+            <h3 class="text-base font-medium text-white mb-2">Project Delivery</h3>
+            <p class="text-sm text-[#E7E2DA]/52 leading-relaxed">End-to-end design and delivery of corporate innovation sprints, venture builds, and open innovation engagements.</p>
+          </div>
+          <span class="text-[11px] text-[#1F6B3A] uppercase tracking-widest font-medium group-hover:tracking-[0.18em] transition-all">Learn More →</span>
         </div>
+
+        <div class="group border border-[#E7E2DA]/10 hover:border-[#1F6B3A]/40 rounded-[4px] p-10 bg-[#141414]/40 hover:bg-[#1F6B3A]/5 transition-all duration-500 fade-up flex flex-col gap-5">
+          <div class="w-10 h-10 rounded-[4px] border border-[#1F6B3A]/30 flex items-center justify-center group-hover:border-[#1F6B3A] group-hover:bg-[#1F6B3A]/10 transition-all">
+            <iconify-icon icon="solar:calendar-linear" width="20" class="text-[#1F6B3A]"></iconify-icon>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-base font-medium text-white mb-2">Program Management</h3>
+            <p class="text-sm text-[#E7E2DA]/52 leading-relaxed">Full management of hackathons, incubation programmes, and acceleration cohorts — from design to demo day.</p>
+          </div>
+          <span class="text-[11px] text-[#1F6B3A] uppercase tracking-widest font-medium group-hover:tracking-[0.18em] transition-all">Learn More →</span>
+        </div>
+
+        <div class="group border border-[#E7E2DA]/10 hover:border-[#1F6B3A]/40 rounded-[4px] p-10 bg-[#141414]/40 hover:bg-[#1F6B3A]/5 transition-all duration-500 fade-up flex flex-col gap-5">
+          <div class="w-10 h-10 rounded-[4px] border border-[#1F6B3A]/30 flex items-center justify-center group-hover:border-[#1F6B3A] group-hover:bg-[#1F6B3A]/10 transition-all">
+            <iconify-icon icon="solar:buildings-2-linear" width="20" class="text-[#1F6B3A]"></iconify-icon>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-base font-medium text-white mb-2">Hub / Labs Management</h3>
+            <p class="text-sm text-[#E7E2DA]/52 leading-relaxed">Design and operation of physical and virtual innovation sandboxes — turning space into productive infrastructure.</p>
+          </div>
+          <span class="text-[11px] text-[#1F6B3A] uppercase tracking-widest font-medium group-hover:tracking-[0.18em] transition-all">Learn More →</span>
+        </div>
+
+        <div class="group border border-[#E7E2DA]/10 hover:border-[#1F6B3A]/40 rounded-[4px] p-10 bg-[#141414]/40 hover:bg-[#1F6B3A]/5 transition-all duration-500 fade-up flex flex-col gap-5">
+          <div class="w-10 h-10 rounded-[4px] border border-[#1F6B3A]/30 flex items-center justify-center group-hover:border-[#1F6B3A] group-hover:bg-[#1F6B3A]/10 transition-all">
+            <iconify-icon icon="solar:megaphone-linear" width="20" class="text-[#1F6B3A]"></iconify-icon>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-base font-medium text-white mb-2">Event Management</h3>
+            <p class="text-sm text-[#E7E2DA]/52 leading-relaxed">Demo days, ecosystem meetups, and marquee innovation events that build community and attract deal flow.</p>
+          </div>
+          <span class="text-[11px] text-[#1F6B3A] uppercase tracking-widest font-medium group-hover:tracking-[0.18em] transition-all">Learn More →</span>
+        </div>
+
+        <div class="group border border-[#E7E2DA]/10 hover:border-[#1F6B3A]/40 rounded-[4px] p-10 bg-[#141414]/40 hover:bg-[#1F6B3A]/5 transition-all duration-500 fade-up flex flex-col gap-5">
+          <div class="w-10 h-10 rounded-[4px] border border-[#1F6B3A]/30 flex items-center justify-center group-hover:border-[#1F6B3A] group-hover:bg-[#1F6B3A]/10 transition-all">
+            <iconify-icon icon="solar:monitor-smartphone-linear" width="20" class="text-[#1F6B3A]"></iconify-icon>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-base font-medium text-white mb-2">Product Development</h3>
+            <p class="text-sm text-[#E7E2DA]/52 leading-relaxed">Websites, web apps, and proprietary platforms — including VentureOS and Zimara.org — that power our programmes and our clients'.</p>
+          </div>
+          <span class="text-[11px] text-[#1F6B3A] uppercase tracking-widest font-medium group-hover:tracking-[0.18em] transition-all">Learn More →</span>
+        </div>
+
+        <!-- AI-Native highlighted -->
+        <div class="group border border-[#1F6B3A]/35 hover:border-[#1F6B3A] rounded-[4px] p-10 bg-[#1F6B3A]/8 hover:bg-[#1F6B3A]/14 transition-all duration-500 fade-up flex flex-col gap-5">
+          <div class="w-10 h-10 rounded-[4px] border border-[#1F6B3A] flex items-center justify-center bg-[#1F6B3A]/20">
+            <iconify-icon icon="solar:cpu-bolt-linear" width="20" class="text-[#1F6B3A]"></iconify-icon>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-base font-medium text-white mb-2">AI-Native Implementation</h3>
+            <p class="text-sm text-[#E7E2DA]/65 leading-relaxed">Designing and deploying AI tools, workflows, and open innovation technology stacks for institutions and communities. This is how we work — not a feature we added.</p>
+          </div>
+          <span class="text-[11px] text-[#1F6B3A] uppercase tracking-widest font-medium group-hover:tracking-[0.18em] transition-all">Our Focus →</span>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════ WHAT WE DO ═══════════════════════════════ -->
-  <section class="services section--dark" id="services">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="label">What We Do</p>
-        <h2>Six ways we build<br/>innovation infrastructure</h2>
+  <!-- ═══════════════════════════════ APPROACH ═══════════════════════════════ -->
+  <section id="approach" class="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 py-24 md:py-32">
+
+    <div class="flex items-center gap-3 mb-16 fade-up">
+      <iconify-icon icon="solar:map-point-wave-linear" width="18" class="text-[#1F6B3A]"></iconify-icon>
+      <span class="text-xs uppercase tracking-widest text-[#E7E2DA]/65 font-medium">How We Work</span>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+      <div class="fade-up">
+        <h2 class="text-4xl md:text-5xl font-normal tracking-tight leading-[1.15] mb-6">
+          Our Approach
+        </h2>
+        <p class="text-base text-[#E7E2DA]/55 leading-relaxed max-w-sm">
+          Five structured phases — from initial diagnosis to complete capability transfer. We don't template; we design.
+        </p>
       </div>
-      <div class="services__grid">
 
-        <div class="service-card reveal">
-          <div class="service-card__icon">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="6" fill="#4abe5c"/><path d="M14 4V8M14 20V24M4 14H8M20 14H24M6.34 6.34L9.17 9.17M18.83 18.83L21.66 21.66M6.34 21.66L9.17 18.83M18.83 9.17L21.66 6.34" stroke="#4abe5c" stroke-width="2" stroke-linecap="round"/></svg>
+      <div class="flex flex-col">
+        <!-- Steps -->
+        <div class="flex gap-6 items-start border-b border-[#E7E2DA]/10 pb-8 mb-8 group cursor-default fade-up">
+          <span class="text-[11px] font-medium text-[#1F6B3A] tracking-widest uppercase w-8 shrink-0 pt-1">01</span>
+          <div class="flex-1">
+            <h3 class="text-lg font-normal text-white mb-1.5">Diagnose</h3>
+            <p class="text-sm text-[#E7E2DA]/52 leading-relaxed">Map the institution's innovation maturity, strategic gaps, and ecosystem connectivity. Define what Corporate-Startup Fit looks like for this client.</p>
           </div>
-          <h3>Project Delivery</h3>
-          <p>End-to-end design and delivery of corporate innovation sprints, venture builds, and open innovation engagements.</p>
-          <span class="service-card__arrow">→</span>
+          <iconify-icon icon="solar:arrow-right-linear" width="18" class="text-[#E7E2DA]/18 group-hover:text-[#1F6B3A] transition-colors shrink-0 mt-1"></iconify-icon>
         </div>
-
-        <div class="service-card reveal">
-          <div class="service-card__icon">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="4" width="24" height="20" rx="2" stroke="#4abe5c" stroke-width="2"/><path d="M2 10H26M8 4V10M20 4V10" stroke="#4abe5c" stroke-width="2" stroke-linecap="round"/><rect x="7" y="15" width="4" height="4" rx="1" fill="#4abe5c"/><rect x="13" y="15" width="4" height="4" rx="1" fill="#4abe5c" opacity="0.5"/><rect x="17" y="15" width="4" height="4" rx="1" fill="#4abe5c" opacity="0.3"/></svg>
+        <div class="flex gap-6 items-start border-b border-[#E7E2DA]/10 pb-8 mb-8 group cursor-default fade-up">
+          <span class="text-[11px] font-medium text-[#1F6B3A] tracking-widest uppercase w-8 shrink-0 pt-1">02</span>
+          <div class="flex-1">
+            <h3 class="text-lg font-normal text-white mb-1.5">Design</h3>
+            <p class="text-sm text-[#E7E2DA]/52 leading-relaxed">Architect the programme — open innovation model, pipeline structure, governance framework, and metrics. We don't template; we design.</p>
           </div>
-          <h3>Program Management</h3>
-          <p>Full management of hackathons, incubation programmes, and acceleration cohorts — from design to demo day.</p>
-          <span class="service-card__arrow">→</span>
+          <iconify-icon icon="solar:arrow-right-linear" width="18" class="text-[#E7E2DA]/18 group-hover:text-[#1F6B3A] transition-colors shrink-0 mt-1"></iconify-icon>
         </div>
-
-        <div class="service-card reveal">
-          <div class="service-card__icon">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="6" width="24" height="18" rx="2" stroke="#4abe5c" stroke-width="2"/><rect x="6" y="2" width="4" height="8" rx="1" fill="#4abe5c"/><rect x="18" y="2" width="4" height="8" rx="1" fill="#4abe5c"/><path d="M8 16H20M8 20H14" stroke="#4abe5c" stroke-width="2" stroke-linecap="round"/></svg>
+        <div class="flex gap-6 items-start border-b border-[#E7E2DA]/10 pb-8 mb-8 group cursor-default fade-up">
+          <span class="text-[11px] font-medium text-[#1F6B3A] tracking-widest uppercase w-8 shrink-0 pt-1">03</span>
+          <div class="flex-1">
+            <h3 class="text-lg font-normal text-white mb-1.5">Build</h3>
+            <p class="text-sm text-[#E7E2DA]/52 leading-relaxed">Stand up the infrastructure — digital platforms and sandboxes, physical hubs, programme workflows, and AI tooling. Execution with zero outsourcing opacity.</p>
           </div>
-          <h3>Hub / Labs Management</h3>
-          <p>Design and operation of physical and virtual innovation sandboxes — turning space into productive infrastructure.</p>
-          <span class="service-card__arrow">→</span>
+          <iconify-icon icon="solar:arrow-right-linear" width="18" class="text-[#E7E2DA]/18 group-hover:text-[#1F6B3A] transition-colors shrink-0 mt-1"></iconify-icon>
         </div>
-
-        <div class="service-card reveal">
-          <div class="service-card__icon">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 22L10 14L16 18L24 8" stroke="#4abe5c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 8H24V10" stroke="#4abe5c" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="14" r="2" fill="#4abe5c"/><circle cx="16" cy="18" r="2" fill="#4abe5c"/></svg>
+        <div class="flex gap-6 items-start border-b border-[#E7E2DA]/10 pb-8 mb-8 group cursor-default fade-up">
+          <span class="text-[11px] font-medium text-[#1F6B3A] tracking-widest uppercase w-8 shrink-0 pt-1">04</span>
+          <div class="flex-1">
+            <h3 class="text-lg font-normal text-white mb-1.5">Run</h3>
+            <p class="text-sm text-[#E7E2DA]/52 leading-relaxed">Run the programme end-to-end: cohort intake, mentor networks, corporate matchmaking, investor connections, and continuous reporting.</p>
           </div>
-          <h3>Event Management</h3>
-          <p>Demo days, ecosystem meetups, and marquee innovation events that build community and attract deal flow.</p>
-          <span class="service-card__arrow">→</span>
+          <iconify-icon icon="solar:arrow-right-linear" width="18" class="text-[#E7E2DA]/18 group-hover:text-[#1F6B3A] transition-colors shrink-0 mt-1"></iconify-icon>
         </div>
-
-        <div class="service-card reveal">
-          <div class="service-card__icon">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="4" width="24" height="16" rx="2" stroke="#4abe5c" stroke-width="2"/><path d="M10 24H18M14 20V24" stroke="#4abe5c" stroke-width="2" stroke-linecap="round"/><path d="M8 12H12M16 12H20M8 16H14" stroke="#4abe5c" stroke-width="2" stroke-linecap="round"/></svg>
+        <div class="flex gap-6 items-start group cursor-default fade-up">
+          <span class="text-[11px] font-medium text-[#1F6B3A] tracking-widest uppercase w-8 shrink-0 pt-1">05</span>
+          <div class="flex-1">
+            <h3 class="text-lg font-normal text-white mb-1.5">Transfer</h3>
+            <p class="text-sm text-[#E7E2DA]/52 leading-relaxed">Transfer capability. Train client teams. Leave behind a self-sustaining innovation operation, not a dependency on Heave.</p>
           </div>
-          <h3>Product Development</h3>
-          <p>Websites, web apps, and proprietary platforms that power our programmes and those of our clients — including VentureOS and Zimara.org.</p>
-          <span class="service-card__arrow">→</span>
+          <iconify-icon icon="solar:arrow-right-linear" width="18" class="text-[#E7E2DA]/18 group-hover:text-[#1F6B3A] transition-colors shrink-0 mt-1"></iconify-icon>
         </div>
-
-        <div class="service-card service-card--accent reveal">
-          <div class="service-card__icon">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4C14 4 8 8 8 14C8 20 14 24 14 24C14 24 20 20 20 14C20 8 14 4 14 4Z" stroke="#121212" stroke-width="2" fill="none"/><circle cx="14" cy="14" r="4" fill="#121212"/><path d="M4 14H8M20 14H24M14 4V8M14 20V24" stroke="#121212" stroke-width="2" stroke-linecap="round"/></svg>
-          </div>
-          <h3>AI-Native Implementation</h3>
-          <p>Designing and deploying the AI tools, workflows, and open innovation technology stack for institutions and communities.</p>
-          <span class="service-card__arrow service-card__arrow--dark">→</span>
-        </div>
-
       </div>
     </div>
-  </section>
 
-  <!-- ═══════════════════════════════ OUR APPROACH ═══════════════════════════════ -->
-  <section class="approach section--charcoal" id="approach">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="label">How We Implement Innovation Projects</p>
-        <h2>Our Approach</h2>
-      </div>
-      <div class="approach__steps">
-
-        <div class="step reveal">
-          <div class="step__number">01</div>
-          <div class="step__connector" aria-hidden="true"></div>
-          <div class="step__body">
-            <h3>Diagnose</h3>
-            <p>Map the institution's innovation maturity, strategic gaps, and ecosystem connectivity. Define what Corporate-Startup Fit looks like for this client.</p>
-          </div>
-        </div>
-
-        <div class="step reveal">
-          <div class="step__number">02</div>
-          <div class="step__connector" aria-hidden="true"></div>
-          <div class="step__body">
-            <h3>Design</h3>
-            <p>Architect the programme — open innovation model, pipeline structure, governance framework, and metrics. We don't template; we design.</p>
-          </div>
-        </div>
-
-        <div class="step reveal">
-          <div class="step__number">03</div>
-          <div class="step__connector" aria-hidden="true"></div>
-          <div class="step__body">
-            <h3>Build</h3>
-            <p>Stand up the infrastructure — digital platforms and sandboxes, physical hubs, programme workflows, and AI tooling. Execution with zero outsourcing opacity.</p>
-          </div>
-        </div>
-
-        <div class="step reveal">
-          <div class="step__number">04</div>
-          <div class="step__connector" aria-hidden="true"></div>
-          <div class="step__body">
-            <h3>Run</h3>
-            <p>Run the programme end-to-end: cohort intake, mentor networks, corporate matchmaking, investor connections, and continuous reporting.</p>
-          </div>
-        </div>
-
-        <div class="step step--last reveal">
-          <div class="step__number">05</div>
-          <div class="step__body">
-            <h3>Transfer</h3>
-            <p>Transfer capability. Train client teams. Leave behind a self-sustaining innovation operation, not a dependency on Heave.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
   </section>
 
   <!-- ═══════════════════════════════ WHO WE SERVE ═══════════════════════════════ -->
-  <section class="clients section--dark" id="clients">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="label">Our Clients</p>
-        <h2>Who We Serve</h2>
+  <section id="clients" class="relative z-10 w-full border-t border-[#E7E2DA]/10 bg-[#1F6B3A]/5">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12 py-24 md:py-32">
+
+      <div class="flex items-center gap-3 mb-16 fade-up">
+        <iconify-icon icon="solar:users-group-two-rounded-linear" width="18" class="text-[#1F6B3A]"></iconify-icon>
+        <span class="text-xs uppercase tracking-widest text-[#E7E2DA]/65 font-medium">Our Clients</span>
       </div>
-      <div class="clients__grid">
 
-        <div class="client-card reveal">
-          <div class="client-card__icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="10" width="24" height="18" rx="1" stroke="#4abe5c" stroke-width="2"/><path d="M4 14H28M12 10V28M20 10V28" stroke="#4abe5c" stroke-width="1.5"/><rect x="9" y="4" width="14" height="6" rx="1" stroke="#4abe5c" stroke-width="2"/></svg>
-          </div>
-          <h3>Corporates</h3>
-          <p>Banks, telcos, FMCG, energy, insurance — institutions that need structured engagement with startups and digital innovation.</p>
+      <div class="mb-14 fade-up">
+        <h2 class="text-4xl md:text-5xl font-normal tracking-tight leading-[1.15]">
+          Who We <span class="font-serif-news italic font-light text-[#E7E2DA]/65">Serve.</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-[3px]">
+
+        <div class="border border-[#E7E2DA]/10 rounded-[4px] p-8 bg-[#141414]/55 hover:border-[#1F6B3A]/40 hover:bg-[#1F6B3A]/6 transition-all duration-500 fade-up flex flex-col gap-4">
+          <iconify-icon icon="solar:buildings-linear" width="26" class="text-[#1F6B3A]"></iconify-icon>
+          <h3 class="text-sm font-semibold text-white">Corporates</h3>
+          <p class="text-xs text-[#E7E2DA]/52 leading-relaxed">Banks, telcos, FMCG, energy, insurance — institutions that need structured startup engagement and digital innovation.</p>
         </div>
 
-        <div class="client-card reveal">
-          <div class="client-card__icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="#4abe5c" stroke-width="2"/><path d="M16 4C16 4 20 10 20 16C20 22 16 28 16 28" stroke="#4abe5c" stroke-width="1.5"/><path d="M16 4C16 4 12 10 12 16C12 22 16 28 16 28" stroke="#4abe5c" stroke-width="1.5"/><path d="M4 16H28" stroke="#4abe5c" stroke-width="1.5"/></svg>
-          </div>
-          <h3>DFIs</h3>
-          <p>IFC, AfDB, SMEDAN, CBN and bilateral DFIs seeking deployment infrastructure for MSME and innovation mandates.</p>
+        <div class="border border-[#E7E2DA]/10 rounded-[4px] p-8 bg-[#141414]/55 hover:border-[#1F6B3A]/40 hover:bg-[#1F6B3A]/6 transition-all duration-500 fade-up flex flex-col gap-4">
+          <iconify-icon icon="solar:global-linear" width="26" class="text-[#1F6B3A]"></iconify-icon>
+          <h3 class="text-sm font-semibold text-white">DFIs</h3>
+          <p class="text-xs text-[#E7E2DA]/52 leading-relaxed">IFC, AfDB, SMEDAN, CBN and bilateral DFIs seeking deployment infrastructure for MSME and innovation mandates.</p>
         </div>
 
-        <div class="client-card reveal">
-          <div class="client-card__icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><polygon points="16,4 28,12 28,28 4,28 4,12" stroke="#4abe5c" stroke-width="2" fill="none"/><rect x="12" y="18" width="8" height="10" rx="1" stroke="#4abe5c" stroke-width="1.5"/><path d="M9 12H23" stroke="#4abe5c" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Government</h3>
-          <p>Ministries, state agencies, and export/trade bodies with formal innovation, digitisation, or SME mandate goals.</p>
+        <div class="border border-[#E7E2DA]/10 rounded-[4px] p-8 bg-[#141414]/55 hover:border-[#1F6B3A]/40 hover:bg-[#1F6B3A]/6 transition-all duration-500 fade-up flex flex-col gap-4">
+          <iconify-icon icon="solar:government-linear" width="26" class="text-[#1F6B3A]"></iconify-icon>
+          <h3 class="text-sm font-semibold text-white">Government</h3>
+          <p class="text-xs text-[#E7E2DA]/52 leading-relaxed">Ministries, state agencies, and trade bodies with formal innovation, digitisation, or SME mandate goals.</p>
         </div>
 
-        <div class="client-card reveal">
-          <div class="client-card__icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 24L16 8L24 24" stroke="#4abe5c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 19H21" stroke="#4abe5c" stroke-width="2" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Market Entry</h3>
-          <p>Multinationals who need local ecosystem intelligence, trusted partnerships, and supplier/distributor development.</p>
+        <div class="border border-[#E7E2DA]/10 rounded-[4px] p-8 bg-[#141414]/55 hover:border-[#1F6B3A]/40 hover:bg-[#1F6B3A]/6 transition-all duration-500 fade-up flex flex-col gap-4">
+          <iconify-icon icon="solar:chart-2-linear" width="26" class="text-[#1F6B3A]"></iconify-icon>
+          <h3 class="text-sm font-semibold text-white">Market Entry</h3>
+          <p class="text-xs text-[#E7E2DA]/52 leading-relaxed">Multinationals who need local ecosystem intelligence, trusted partnerships, and supplier/distributor development.</p>
         </div>
 
-        <div class="client-card reveal">
-          <div class="client-card__icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M6 24C6 18.477 10.477 14 16 14C21.523 14 26 18.477 26 24" stroke="#4abe5c" stroke-width="2"/><circle cx="16" cy="9" r="5" stroke="#4abe5c" stroke-width="2"/></svg>
-          </div>
-          <h3>Universities</h3>
-          <p>Institutions building tech transfer offices, student venture pipelines, and industry-academia collaboration.</p>
+        <div class="border border-[#E7E2DA]/10 rounded-[4px] p-8 bg-[#141414]/55 hover:border-[#1F6B3A]/40 hover:bg-[#1F6B3A]/6 transition-all duration-500 fade-up flex flex-col gap-4">
+          <iconify-icon icon="solar:graduation-cap-linear" width="26" class="text-[#1F6B3A]"></iconify-icon>
+          <h3 class="text-sm font-semibold text-white">Universities</h3>
+          <p class="text-xs text-[#E7E2DA]/52 leading-relaxed">Institutions building tech transfer offices, student venture pipelines, and industry-academia collaboration.</p>
         </div>
 
       </div>
@@ -373,205 +472,309 @@
   </section>
 
   <!-- ═══════════════════════════════ CASE STUDIES ═══════════════════════════════ -->
-  <section class="work section--charcoal" id="work">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="label">Case Studies</p>
-        <h2>What we've built</h2>
-      </div>
-      <div class="work__grid">
+  <section id="work" class="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 py-24 md:py-32">
 
-        <div class="case-card reveal">
-          <div class="case-card__type">Hackathon &amp; Program Management</div>
-          <h3 class="case-card__title">Youth Banking Innovation Program</h3>
-          <p class="case-card__body">End-to-end design and execution of a national youth fintech challenge for a leading Nigerian bank.</p>
-          <ul class="case-card__list">
-            <li>Programme design — theme, judging criteria, prize structure, partnership activation</li>
-            <li>Venture sourcing — marketing, application management, screening and cohort curation</li>
-            <li>Bespoke platform for automated scoring and public judging</li>
-            <li>Demo Day delivery — branded event, live pitch judging, media coverage</li>
-          </ul>
-          <a href="https://innovatex.africa" class="case-card__link" target="_blank" rel="noopener">Innovatex.africa →</a>
+    <div class="flex items-center gap-3 mb-16 fade-up">
+      <iconify-icon icon="solar:folder-open-linear" width="18" class="text-[#1F6B3A]"></iconify-icon>
+      <span class="text-xs uppercase tracking-widest text-[#E7E2DA]/65 font-medium">Case Studies</span>
+    </div>
+
+    <div class="mb-14 fade-up">
+      <h2 class="text-4xl md:text-5xl font-normal tracking-tight leading-[1.15]">
+        What we've <span class="font-serif-news italic font-light text-[#E7E2DA]/65">already built.</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-[3px]">
+
+      <div class="group border border-[#E7E2DA]/10 group-hover:border-[#1F6B3A]/30 rounded-[4px] p-12 bg-[#141414]/75 backdrop-blur-md flex flex-col gap-8 transition-colors duration-500 fade-up hover:border-[#1F6B3A]/30">
+        <span class="text-[11px] uppercase tracking-widest text-[#1F6B3A] font-semibold border border-[#1F6B3A]/30 rounded-[4px] px-3 py-1.5 w-fit">Hackathon &amp; Program Management</span>
+        <h3 class="text-2xl font-normal text-white leading-snug">Youth Banking Innovation Program</h3>
+        <p class="text-sm text-[#E7E2DA]/55 leading-relaxed">End-to-end design and execution of a national youth fintech challenge for a leading Nigerian bank — from brief to demo day.</p>
+        <ul class="flex flex-col gap-3 flex-1">
+          <li class="flex items-start gap-3 text-sm text-[#E7E2DA]/50"><span class="text-[#1F6B3A] shrink-0 mt-0.5">—</span>Programme design — theme, judging criteria, prize structure, partnership activation</li>
+          <li class="flex items-start gap-3 text-sm text-[#E7E2DA]/50"><span class="text-[#1F6B3A] shrink-0 mt-0.5">—</span>Venture sourcing — marketing, applications, screening and cohort curation</li>
+          <li class="flex items-start gap-3 text-sm text-[#E7E2DA]/50"><span class="text-[#1F6B3A] shrink-0 mt-0.5">—</span>Bespoke scoring platform with public voting and automated evaluation</li>
+          <li class="flex items-start gap-3 text-sm text-[#E7E2DA]/50"><span class="text-[#1F6B3A] shrink-0 mt-0.5">—</span>Demo Day — branded event, live judging, media coverage, alumni activation</li>
+        </ul>
+        <a href="https://innovatex.africa" target="_blank" rel="noopener" class="flex items-center gap-2 text-sm text-[#1F6B3A] font-medium group-hover:gap-3 transition-all">
+          Innovatex.africa <iconify-icon icon="solar:arrow-right-up-linear" width="15"></iconify-icon>
+        </a>
+      </div>
+
+      <div class="group border border-[#E7E2DA]/10 rounded-[4px] p-12 bg-[#141414]/75 backdrop-blur-md flex flex-col gap-8 transition-colors duration-500 fade-up hover:border-[#1F6B3A]/30">
+        <span class="text-[11px] uppercase tracking-widest text-[#1F6B3A] font-semibold border border-[#1F6B3A]/30 rounded-[4px] px-3 py-1.5 w-fit">Hub Operationalization &amp; Management</span>
+        <h3 class="text-2xl font-normal text-white leading-snug">Hub One — Yaba, Lagos</h3>
+        <p class="text-sm text-[#E7E2DA]/55 leading-relaxed">Design, launch and ongoing operation of a premium co-working and innovation hub in Lagos' tech district.</p>
+        <ul class="flex flex-col gap-3 flex-1">
+          <li class="flex items-start gap-3 text-sm text-[#E7E2DA]/50"><span class="text-[#1F6B3A] shrink-0 mt-0.5">—</span>Membership model, programming calendar, community management framework</li>
+          <li class="flex items-start gap-3 text-sm text-[#E7E2DA]/50"><span class="text-[#1F6B3A] shrink-0 mt-0.5">—</span>30 workstations · 7 space types · 2 private offices · 24/7 AI infrastructure</li>
+          <li class="flex items-start gap-3 text-sm text-[#E7E2DA]/50"><span class="text-[#1F6B3A] shrink-0 mt-0.5">—</span>Weekly events, resident cohorts, mentor-in-residence activations</li>
+          <li class="flex items-start gap-3 text-sm text-[#E7E2DA]/50"><span class="text-[#1F6B3A] shrink-0 mt-0.5">—</span>Real-time impact reporting on startups supported, jobs created, and deals closed</li>
+        </ul>
+        <a href="https://hubone.heaveventures.com" target="_blank" rel="noopener" class="flex items-center gap-2 text-sm text-[#1F6B3A] font-medium group-hover:gap-3 transition-all">
+          hubone.heaveventures.com <iconify-icon icon="solar:arrow-right-up-linear" width="15"></iconify-icon>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ ZIMARA ═══════════════════════════════ -->
+  <section class="relative z-10 w-full border-y border-[#E7E2DA]/10 bg-[#141414]/55 backdrop-blur-md">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12 py-24 md:py-32">
+
+      <div class="flex items-center gap-3 mb-16 fade-up">
+        <iconify-icon icon="solar:code-square-linear" width="18" class="text-[#1F6B3A]"></iconify-icon>
+        <span class="text-xs uppercase tracking-widest text-[#E7E2DA]/65 font-medium">Proprietary Software</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+        <div class="fade-up">
+          <h2 class="text-4xl md:text-5xl font-normal tracking-tight leading-[1.15] mb-8">
+            Built our own IP. <br/>
+            <span class="font-serif-news italic font-light text-[#E7E2DA]/65">On purpose.</span>
+          </h2>
+          <p class="text-base text-[#E7E2DA]/55 leading-relaxed max-w-md mb-10">
+            Most African OI firms have no proprietary software. We built Zimara.org — a live SME creditworthiness engine with its own scoring model and financing pipeline — because real infrastructure requires real technology.
+          </p>
+          <div class="relative p-[1px] rounded-[4px] overflow-hidden group inline-block">
+            <div class="absolute inset-0 bg-gradient-to-r from-[#1F6B3A] via-[#E7E2DA]/20 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <a href="https://zimara.org" target="_blank" rel="noopener"
+               class="relative flex items-center gap-2.5 bg-[#141414] hover:bg-[#161616] text-[#E7E2DA] px-8 py-4 rounded-[3px] text-sm font-normal transition-colors">
+              Visit Zimara.org <iconify-icon icon="solar:arrow-right-up-linear" width="15"></iconify-icon>
+            </a>
+          </div>
         </div>
 
-        <div class="case-card reveal">
-          <div class="case-card__type">Hub Operationalization &amp; Management</div>
-          <h3 class="case-card__title">Hub One — Yaba, Lagos</h3>
-          <p class="case-card__body">Design, launch and ongoing management of a premium co-working and innovation hub in the heart of Lagos' tech district.</p>
-          <ul class="case-card__list">
-            <li>Membership model, programming calendar, community management</li>
-            <li>30 workstations · 7 space types · 2 private offices · 24/7 AI infrastructure</li>
-            <li>Weekly events, resident cohorts, mentor-in-residence activations</li>
-            <li>Real-time reporting on startups supported, jobs created, deals closed</li>
-          </ul>
-          <a href="https://hubone.heaveventures.com" class="case-card__link" target="_blank" rel="noopener">hubone.heaveventures.com →</a>
+        <div class="relative p-[1px] rounded-[4px] overflow-hidden fade-up">
+          <div class="absolute inset-0 bg-gradient-to-br from-[#1F6B3A]/28 to-transparent rounded-[4px]"></div>
+          <div class="relative bg-[#0c190f] border border-[#1F6B3A]/22 rounded-[4px] p-10">
+            <div class="mb-8 pb-8 border-b border-[#1F6B3A]/18">
+              <h3 class="text-2xl font-semibold text-[#1F6B3A] mb-1">Zimara.org</h3>
+              <p class="text-xs font-semibold text-[#E7E2DA]/55 uppercase tracking-widest">Train. Score. Finance.</p>
+              <p class="text-xs italic text-[#E7E2DA]/35 mt-1 font-serif-news">Africa's SME Creditworthiness Engine</p>
+            </div>
+            <div class="grid grid-cols-2 gap-x-6 gap-y-8">
+              <div>
+                <iconify-icon icon="solar:book-open-linear" width="20" class="text-[#1F6B3A] mb-3 block"></iconify-icon>
+                <h4 class="text-sm font-medium text-white mb-1.5">SME Training Platform</h4>
+                <p class="text-xs text-[#E7E2DA]/48 leading-relaxed">6 pillars — financial literacy, revenue design, marketing, operations, governance, and access to finance.</p>
+              </div>
+              <div>
+                <iconify-icon icon="solar:star-shine-linear" width="20" class="text-[#1F6B3A] mb-3 block"></iconify-icon>
+                <h4 class="text-sm font-medium text-white mb-1.5">The Zimara Score</h4>
+                <p class="text-xs text-[#E7E2DA]/48 leading-relaxed">Proprietary SME readiness score — forward-looking, lender-trusted, richer than any credit bureau output.</p>
+              </div>
+              <div>
+                <iconify-icon icon="solar:hand-money-linear" width="20" class="text-[#1F6B3A] mb-3 block"></iconify-icon>
+                <h4 class="text-sm font-medium text-white mb-1.5">Blended Finance Facility</h4>
+                <p class="text-xs text-[#E7E2DA]/48 leading-relaxed">Top graduates access grants, loans, and equity from our DFI, bank, and investor network.</p>
+              </div>
+              <div>
+                <iconify-icon icon="solar:handshake-linear" width="20" class="text-[#1F6B3A] mb-3 block"></iconify-icon>
+                <h4 class="text-sm font-medium text-white mb-1.5">Open for Partnership</h4>
+                <p class="text-xs text-[#E7E2DA]/48 leading-relaxed">Co-brand, fund the facility, or run a 90-day pilot cohort with your SME base.</p>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════ PROPRIETARY SOFTWARE ═══════════════════════════════ -->
-  <section class="software section--dark" id="software">
-    <div class="container software__inner">
-      <div class="software__label reveal">
-        <p class="label">SME Financing Engine</p>
-        <h2>Our Proprietary<br/>Software</h2>
+  <!-- ═══════════════════════════════ WHY HEAVE ═══════════════════════════════ -->
+  <section class="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 py-24 md:py-32">
+
+    <div class="flex items-center gap-3 mb-16 fade-up">
+      <iconify-icon icon="solar:shield-check-linear" width="18" class="text-[#1F6B3A]"></iconify-icon>
+      <span class="text-xs uppercase tracking-widest text-[#E7E2DA]/65 font-medium">Why Heave Ventures</span>
+    </div>
+
+    <div class="mb-14 fade-up">
+      <h2 class="text-4xl md:text-5xl font-normal tracking-tight leading-[1.15]">
+        What makes us <br/>
+        <span class="font-serif-news italic font-light text-[#E7E2DA]/65">genuinely different.</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[3px]">
+
+      <div class="border border-[#E7E2DA]/10 rounded-[4px] p-8 hover:border-[#1F6B3A]/30 hover:bg-[#1F6B3A]/5 transition-all duration-500 fade-up">
+        <div class="text-[5.5rem] font-serif-news italic font-light text-white/[0.06] mb-4 leading-none">01</div>
+        <h3 class="text-sm font-semibold text-white mb-3">A Published Methodology</h3>
+        <p class="text-xs text-[#E7E2DA]/52 leading-relaxed">The "Open-Innovation is African" framework gives every Heave engagement a proven intellectual backbone. We don't use borrowed Western templates — we wrote the book.</p>
       </div>
-      <div class="software__card reveal">
-        <div class="zimara__header">
-          <div class="zimara__brand">
-            <span class="zimara__name">Zimara.org</span>
-            <span class="zimara__tagline">Train. Score. Finance.</span>
-            <span class="zimara__sub">Africa's SME Creditworthiness Engine</span>
-          </div>
-        </div>
-        <div class="zimara__features">
-          <div class="zimara__feature">
-            <div class="zimara__feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#4abe5c" stroke-width="2"/><path d="M8 12L11 15L16 9" stroke="#4abe5c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div>
-              <h4>SME Training Platform</h4>
-              <p>6 structured pillars — financial literacy, revenue design, marketing, operations, governance, and access to finance.</p>
-            </div>
-          </div>
-          <div class="zimara__feature">
-            <div class="zimara__feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L15 8H21L16 12L18 18L12 14L6 18L8 12L3 8H9L12 2Z" stroke="#4abe5c" stroke-width="2" stroke-linejoin="round"/></svg>
-            </div>
-            <div>
-              <h4>The Zimara Score</h4>
-              <p>A proprietary SME readiness score — forward-looking, lender-trusted, and richer than any credit bureau output.</p>
-            </div>
-          </div>
-          <div class="zimara__feature">
-            <div class="zimara__feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 22C17.523 22 22 17.523 22 12H12V2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22Z" stroke="#4abe5c" stroke-width="2"/></svg>
-            </div>
-            <div>
-              <h4>Blended Finance Facility</h4>
-              <p>Top graduates pitch at Bootcamp and access grants, loans, and equity from our DFI, bank, and investor network.</p>
-            </div>
-          </div>
-          <div class="zimara__feature">
-            <div class="zimara__feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#4abe5c" stroke-width="2"/><path d="M12 8V16M8 12H16" stroke="#4abe5c" stroke-width="2" stroke-linecap="round"/></svg>
-            </div>
-            <div>
-              <h4>Open for Partnership</h4>
-              <p>Corporates, DFIs, and governments can co-brand, fund the facility, or run a 90-day pilot cohort with their SME base.</p>
-            </div>
-          </div>
-        </div>
-        <a href="https://zimara.org" class="btn btn--primary zimara__cta" target="_blank" rel="noopener">Visit Zimara.org →</a>
+
+      <div class="border border-[#E7E2DA]/10 rounded-[4px] p-8 hover:border-[#1F6B3A]/30 hover:bg-[#1F6B3A]/5 transition-all duration-500 fade-up">
+        <div class="text-[5.5rem] font-serif-news italic font-light text-white/[0.06] mb-4 leading-none">02</div>
+        <h3 class="text-sm font-semibold text-white mb-3">Proprietary Software</h3>
+        <p class="text-xs text-[#E7E2DA]/52 leading-relaxed">Zimara.org is a live platform with its own scoring model and financing pipeline. Most African OI firms have no IP of their own.</p>
       </div>
+
+      <div class="border border-[#E7E2DA]/10 rounded-[4px] p-8 hover:border-[#1F6B3A]/30 hover:bg-[#1F6B3A]/5 transition-all duration-500 fade-up">
+        <div class="text-[5.5rem] font-serif-news italic font-light text-white/[0.06] mb-4 leading-none">03</div>
+        <h3 class="text-sm font-semibold text-white mb-3">Native to Africa, Globally Connected</h3>
+        <p class="text-xs text-[#E7E2DA]/52 leading-relaxed">Deep Nigeria roots with active cross-border programming in Francophone West Africa and beyond. We don't map African markets onto foreign models.</p>
+      </div>
+
+      <div class="border border-[#1F6B3A]/30 bg-[#1F6B3A]/8 rounded-[4px] p-8 hover:border-[#1F6B3A] hover:bg-[#1F6B3A]/12 transition-all duration-500 fade-up">
+        <div class="text-[5.5rem] font-serif-news italic font-light text-[#1F6B3A]/18 mb-4 leading-none">04</div>
+        <h3 class="text-sm font-semibold text-white mb-3">AI-Native</h3>
+        <p class="text-xs text-[#E7E2DA]/65 leading-relaxed">Every Heave engagement includes AI-native tooling — programme automation to ecosystem intelligence dashboards. This isn't a feature we're adding; it's how we work.</p>
+      </div>
+
     </div>
   </section>
 
-  <!-- ═══════════════════════════════ WHY HEAVE VENTURES ═══════════════════════════════ -->
-  <section class="why-heave section--dark-green" id="why-heave">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="label">Why Heave Ventures</p>
-        <h2>What makes us<br/>different</h2>
+  <!-- ═══════════════════════════════ TESTIMONIAL ═══════════════════════════════ -->
+  <section class="relative z-10 w-full border-y border-[#E7E2DA]/10 bg-[#141414]/75 backdrop-blur-md">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12 py-24 md:py-32 flex flex-col md:flex-row gap-16 relative">
+
+      <div class="absolute top-12 right-12 text-[#E7E2DA]/4 hidden md:block pointer-events-none">
+        <iconify-icon icon="solar:quote-right-linear" width="120" height="120"></iconify-icon>
       </div>
-      <div class="why-heave__grid">
 
-        <div class="differentiator reveal">
-          <span class="differentiator__num">01</span>
-          <h3>A Published Methodology</h3>
-          <p>The "Open-Innovation is African" framework gives every Heave engagement a proven intellectual backbone — not gut feel or borrowed Western templates. We wrote the book.</p>
+      <div class="md:w-1/5 flex flex-col items-start gap-5 fade-up">
+        <div class="w-14 h-14 rounded-full bg-[#1F6B3A]/18 border border-[#1F6B3A]/30 flex items-center justify-center">
+          <iconify-icon icon="solar:user-linear" width="24" class="text-[#1F6B3A]"></iconify-icon>
         </div>
-
-        <div class="differentiator reveal">
-          <span class="differentiator__num">02</span>
-          <h3>Proprietary Software</h3>
-          <p>Zimara.org is a live platform with its own scoring model and financing pipeline. Most African OI firms have no IP of their own.</p>
+        <div>
+          <h4 class="text-white font-medium text-sm mb-1">Innovation Partner</h4>
+          <p class="text-[11px] uppercase tracking-widest text-[#E7E2DA]/45 font-medium">Leading Nigerian Bank</p>
         </div>
-
-        <div class="differentiator reveal">
-          <span class="differentiator__num">03</span>
-          <h3>Native to Africa, Globally Connected</h3>
-          <p>Deep Nigeria roots with active cross-border programming in Francophone West Africa and beyond. We don't map African markets onto foreign models.</p>
-        </div>
-
-        <div class="differentiator reveal">
-          <span class="differentiator__num">04</span>
-          <h3>AI-Native</h3>
-          <p>Every Heave engagement includes AI-native tooling — programme automation to ecosystem intelligence dashboards. This isn't a feature we're adding; it's how we work.</p>
-        </div>
-
       </div>
+
+      <div class="md:w-4/5 fade-up">
+        <p class="text-2xl md:text-[2.2rem] font-normal leading-[1.35] tracking-tight text-white">
+          "Working with Heave Ventures was a paradigm shift. They stripped away the noise and helped us build a structured engagement model with the startup ecosystem — from sourcing to commercial pilot in under 90 days. The result is a repeatable innovation engine we now own."
+        </p>
+      </div>
+
     </div>
   </section>
 
-  <!-- ═══════════════════════════════ CTA / CONTACT ═══════════════════════════════ -->
-  <section class="contact section--dark" id="contact">
-    <div class="contact__geo" aria-hidden="true">
-      <svg viewBox="0 0 400 400" fill="none" preserveAspectRatio="xMidYMid slice">
-        <polygon points="0,0 200,0 0,200" fill="#1b4d27" opacity="0.7"/>
-        <polygon points="200,0 400,0 400,200" fill="#2d7a3a" opacity="0.5"/>
-        <polygon points="0,200 200,400 0,400" fill="#2d7a3a" opacity="0.5"/>
-        <polygon points="200,400 400,200 400,400" fill="#1b4d27" opacity="0.7"/>
-      </svg>
-    </div>
-    <div class="container contact__inner reveal">
-      <h2>Let's build together</h2>
-      <p>Ready to design, build, or operate your innovation infrastructure? We'd love to hear from you.</p>
-      <div class="contact__actions">
-        <a href="mailto:theteam@heaveventures.com" class="btn btn--primary btn--lg">theteam@heaveventures.com</a>
-        <a href="tel:+2349022618668" class="btn btn--ghost btn--lg">+234 902 261 8668</a>
+  <!-- ═══════════════════════════════ CONTACT ═══════════════════════════════ -->
+  <section id="contact" class="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 py-32 md:py-48">
+    <div class="flex flex-col items-center text-center">
+
+      <div class="flex items-center gap-3 mb-12 fade-up">
+        <div class="w-1.5 h-1.5 rounded-full bg-[#1F6B3A] shadow-[0_0_8px_#1F6B3A]"></div>
+        <span class="text-xs uppercase tracking-widest text-[#E7E2DA]/65 font-medium">Get In Touch</span>
       </div>
-      <p class="contact__url">www.heaveventures.com</p>
+
+      <h2 class="text-5xl md:text-7xl lg:text-[5.75rem] font-normal tracking-tight leading-[1.06] mb-12 fade-up max-w-4xl">
+        Let's build <br/>
+        <span class="font-serif-news italic font-light text-[#1F6B3A]">together.</span>
+      </h2>
+
+      <p class="text-lg text-[#E7E2DA]/55 max-w-md leading-relaxed mb-14 fade-up">
+        Ready to design, build, or operate your innovation infrastructure? We'd love to hear from you.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4 fade-up">
+        <a href="mailto:theteam@heaveventures.com"
+           class="bg-[#E7E2DA] hover:bg-white text-[#141414] px-10 py-5 rounded-[4px] text-sm font-medium transition-colors flex items-center gap-2.5">
+          theteam@heaveventures.com
+          <iconify-icon icon="solar:letter-linear" width="17"></iconify-icon>
+        </a>
+        <a href="tel:+2349022618668"
+           class="border border-[#E7E2DA]/20 hover:border-[#1F6B3A]/50 text-[#E7E2DA] hover:text-white px-10 py-5 rounded-[4px] text-sm font-normal transition-all flex items-center gap-2.5">
+          +234 902 261 8668
+          <iconify-icon icon="solar:phone-linear" width="17"></iconify-icon>
+        </a>
+      </div>
+
+      <p class="text-xs text-[#E7E2DA]/28 mt-10 fade-up">www.heaveventures.com · Yaba, Lagos, Nigeria</p>
+
     </div>
   </section>
 
   <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <a href="#" class="nav__logo">
-          <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect width="14" height="14" fill="#4abe5c"/><rect x="18" width="14" height="14" fill="#2d7a3a"/><rect y="18" width="14" height="14" fill="#2d7a3a"/><rect x="18" y="18" width="14" height="14" fill="#4abe5c"/><polygon points="0,14 14,0 14,14" fill="#1a1a1a"/><polygon points="18,14 32,0 32,14" fill="#1a1a1a"/><polygon points="0,18 14,32 14,18" fill="#1a1a1a"/><polygon points="18,18 32,32 32,18" fill="#1a1a1a"/></svg>
-          <span>Heave<strong>Ventures</strong></span>
-        </a>
-        <p>Designing, building and operating<br/>Africa's innovation infrastructure.</p>
+  <footer class="relative z-10 border-t border-[#E7E2DA]/10">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-[#E7E2DA]/10">
+
+      <div>
+        <div class="flex gap-[3px] h-5 items-end mb-5">
+          <div class="w-2 h-4 bg-white -skew-x-12"></div>
+          <div class="w-2 h-5 bg-white -skew-x-12"></div>
+          <div class="w-2 h-3 bg-[#1F6B3A] -skew-x-12"></div>
+        </div>
+        <p class="text-xs text-[#E7E2DA]/42 leading-relaxed max-w-[200px]">Designing, building and operating Africa's innovation infrastructure.</p>
       </div>
-      <nav class="footer__nav">
-        <div class="footer__col">
-          <span class="footer__col-title">Company</span>
-          <a href="#about">About</a>
-          <a href="#why">Why We Exist</a>
-          <a href="#why-heave">Why Heave</a>
+
+      <div>
+        <h5 class="text-[11px] uppercase tracking-widest text-[#1F6B3A] font-semibold mb-5">Company</h5>
+        <div class="flex flex-col gap-3">
+          <a href="#about"    class="text-xs text-[#E7E2DA]/48 hover:text-[#E7E2DA] transition-colors">About</a>
+          <a href="#services" class="text-xs text-[#E7E2DA]/48 hover:text-[#E7E2DA] transition-colors">Services</a>
+          <a href="#approach" class="text-xs text-[#E7E2DA]/48 hover:text-[#E7E2DA] transition-colors">Approach</a>
+          <a href="#clients"  class="text-xs text-[#E7E2DA]/48 hover:text-[#E7E2DA] transition-colors">Clients</a>
+          <a href="#work"     class="text-xs text-[#E7E2DA]/48 hover:text-[#E7E2DA] transition-colors">Case Studies</a>
         </div>
-        <div class="footer__col">
-          <span class="footer__col-title">Services</span>
-          <a href="#services">Project Delivery</a>
-          <a href="#services">Program Management</a>
-          <a href="#services">Hub Management</a>
-          <a href="#services">AI-Native</a>
+      </div>
+
+      <div>
+        <h5 class="text-[11px] uppercase tracking-widest text-[#1F6B3A] font-semibold mb-5">Products</h5>
+        <div class="flex flex-col gap-3">
+          <a href="https://zimara.org" target="_blank" rel="noopener" class="text-xs text-[#E7E2DA]/48 hover:text-[#E7E2DA] transition-colors flex items-center gap-1.5">Zimara.org <iconify-icon icon="solar:arrow-right-up-linear" width="11"></iconify-icon></a>
+          <a href="https://hubone.heaveventures.com" target="_blank" rel="noopener" class="text-xs text-[#E7E2DA]/48 hover:text-[#E7E2DA] transition-colors flex items-center gap-1.5">Hub One <iconify-icon icon="solar:arrow-right-up-linear" width="11"></iconify-icon></a>
+          <a href="https://innovatex.africa" target="_blank" rel="noopener" class="text-xs text-[#E7E2DA]/48 hover:text-[#E7E2DA] transition-colors flex items-center gap-1.5">InnovateX <iconify-icon icon="solar:arrow-right-up-linear" width="11"></iconify-icon></a>
+          <a href="#" class="text-xs text-[#E7E2DA]/48 hover:text-[#E7E2DA] transition-colors">VentureOS</a>
         </div>
-        <div class="footer__col">
-          <span class="footer__col-title">Products</span>
-          <a href="https://zimara.org" target="_blank" rel="noopener">Zimara.org</a>
-          <a href="https://hubone.heaveventures.com" target="_blank" rel="noopener">Hub One</a>
-          <a href="https://innovatex.africa" target="_blank" rel="noopener">InnovateX</a>
-          <a href="#software">VentureOS</a>
+      </div>
+
+      <div>
+        <h5 class="text-[11px] uppercase tracking-widest text-[#1F6B3A] font-semibold mb-5">Connect</h5>
+        <div class="flex flex-col gap-3">
+          <a href="mailto:theteam@heaveventures.com" class="text-xs text-[#E7E2DA]/48 hover:text-[#E7E2DA] transition-colors break-all">theteam@heaveventures.com</a>
+          <a href="tel:+2349022618668" class="text-xs text-[#E7E2DA]/48 hover:text-[#E7E2DA] transition-colors">+234 902 261 8668</a>
+          <span class="text-xs text-[#E7E2DA]/28">Yaba, Lagos, Nigeria</span>
         </div>
-        <div class="footer__col">
-          <span class="footer__col-title">Connect</span>
-          <a href="mailto:theteam@heaveventures.com">theteam@heaveventures.com</a>
-          <a href="tel:+2349022618668">+234 902 261 8668</a>
-          <a href="#work">Case Studies</a>
-        </div>
-      </nav>
+      </div>
+
     </div>
-    <div class="container footer__bottom">
-      <span>© 2026 Heave Ventures. All rights reserved.</span>
-      <span>Yaba, Lagos · Nigeria</span>
+
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12 py-6 flex flex-col md:flex-row justify-between items-center gap-3">
+      <p class="text-xs text-[#E7E2DA]/28">© 2026 Heave Ventures. All rights reserved.</p>
+      <p class="text-xs text-[#E7E2DA]/18 font-serif-news italic">We design. We build. We operate.</p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- ═══════════════════════════════ SCRIPTS ═══════════════════════════════ -->
+  <script>
+    // Mobile menu
+    document.getElementById('menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+    document.querySelectorAll('#mobile-menu a').forEach(a =>
+      a.addEventListener('click', () => document.getElementById('mobile-menu').classList.add('hidden'))
+    );
+
+    // GSAP animations
+    document.addEventListener('DOMContentLoaded', () => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Hero headline word reveal
+      gsap.fromTo('.reveal-word',
+        { y: '110%', rotateZ: 1.5, opacity: 0 },
+        { y: '0%', rotateZ: 0, opacity: 1, duration: 1.1, stagger: 0.09, ease: 'power4.out', delay: 0.1 }
+      );
+
+      // Scroll fade-up for all .fade-up elements
+      gsap.utils.toArray('.fade-up').forEach(el => {
+        gsap.fromTo(el,
+          { y: 38, opacity: 0 },
+          {
+            y: 0, opacity: 1, duration: 0.85, ease: 'power3.out',
+            scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' }
+          }
+        );
+      });
+    });
+  </script>
+
 </body>
 </html>
