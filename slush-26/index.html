@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slush 2026 Startup Delegation — Heave Ventures</title>
+  <meta name="description" content="Join Heave Ventures' curated delegation to Slush 2026 in Helsinki. Investor access, visa support, and exhibition packages for African startups." />
+
+  <link rel="icon" type="image/png" href="../logo-dark.png" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { serif: ['Newsreader', 'Georgia', 'serif'] }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,300;1,6..72,400&display=swap" rel="stylesheet" />
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .font-serif-news { font-family: 'Newsreader', serif; }
+    @keyframes blob {
+      0%,100% { border-radius:60% 40% 44% 56%/58% 48% 52% 42%; transform:translate(0,0); }
+      50%      { border-radius:40% 60% 56% 44%/46% 56% 44% 54%; transform:translate(6px,-10px); }
+    }
+    @keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-14px); } }
+    .fade-up { opacity:0; transform:translateY(28px); }
+
+    .hv-input {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 4px;
+      padding: 13px 16px;
+      font-size: 0.875rem;
+      color: #fff;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+    .hv-input::placeholder { color: rgba(255,255,255,0.35); }
+    .hv-input:focus { border-color: rgba(110,224,126,0.6); background: rgba(255,255,255,0.09); }
+    select.hv-input option { background: #1a3a24; color: #fff; }
+
+    .tier-card { transition: transform 0.3s cubic-bezier(.22,.68,0,1.2), box-shadow 0.3s; }
+    .tier-card:hover { transform: translateY(-6px); }
+  </style>
+</head>
+
+<body class="bg-[#0C1F12] text-white antialiased overflow-x-hidden selection:bg-[#1F6B3A] selection:text-white">
+
+  <!-- ─── Ambient background ─────────────────────── -->
+  <div class="fixed inset-0 pointer-events-none z-0">
+    <div class="absolute top-[-10%] right-[-5%] w-[700px] h-[700px] bg-[#1F6B3A]/18 blur-[120px]" style="animation:blob 10s ease-in-out infinite;"></div>
+    <div class="absolute bottom-[20%] left-[-5%] w-[500px] h-[500px] bg-[#1F6B3A]/10 blur-[100px]" style="animation:blob 14s ease-in-out infinite reverse 3s;"></div>
+    <div class="absolute inset-0 opacity-[0.05]" style="background-image:radial-gradient(white 1px,transparent 1px);background-size:32px 32px;"></div>
+  </div>
+
+  <!-- ══════════════════ NAV ══════════════════ -->
+  <header class="sticky top-0 z-50 border-b border-white/8 bg-[#0C1F12]/90 backdrop-blur-md">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-10 flex items-center justify-between h-[68px]">
+      <a href="/" class="flex items-center">
+        <img src="../logo-dark.png" alt="Heave Ventures" class="h-7 w-auto" style="filter:invert(1) brightness(2);" />
+      </a>
+      <div class="flex items-center gap-3">
+        <a href="#packages" class="hidden md:block text-sm text-white/60 hover:text-white transition-colors font-medium">View Packages</a>
+        <a href="#register"
+           class="bg-[#1F6B3A] hover:bg-[#256b3e] text-white text-xs font-semibold uppercase tracking-widest px-5 py-2.5 rounded-[4px] transition-colors">
+          Register Interest
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════════════ HERO ══════════════════ -->
+  <section class="relative z-10 min-h-[90vh] flex flex-col justify-center max-w-[1200px] mx-auto px-6 md:px-10 py-24 md:py-32">
+
+    <div class="flex flex-wrap items-center gap-3 mb-10 fade-up">
+      <span class="inline-flex items-center gap-1.5 bg-white/8 border border-white/12 rounded-full px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-white/70">
+        <iconify-icon icon="solar:map-point-wave-linear" width="13" class="text-[#6ee07e]"></iconify-icon>
+        Helsinki, Finland
+      </span>
+      <span class="inline-flex items-center gap-1.5 bg-white/8 border border-white/12 rounded-full px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-white/70">
+        <iconify-icon icon="solar:calendar-linear" width="13" class="text-[#6ee07e]"></iconify-icon>
+        November / December 2026
+      </span>
+      <span class="inline-flex items-center gap-1.5 bg-[#1F6B3A]/30 border border-[#6ee07e]/30 rounded-full px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-[#6ee07e]">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#6ee07e] animate-pulse"></span>
+        Applications Open
+      </span>
+    </div>
+
+    <h1 class="text-[3.25rem] md:text-[5rem] lg:text-[6rem] font-bold tracking-tight leading-[1.02] mb-8 max-w-5xl fade-up">
+      Africa's Startup<br/>
+      Delegation to
+      <span class="font-serif-news italic font-light text-[#6ee07e]"> Slush.</span>
+    </h1>
+
+    <p class="text-lg md:text-xl text-white/58 max-w-2xl leading-relaxed mb-12 fade-up">
+      Heave Ventures is bringing a curated cohort of African founders to Slush 2026 — Europe's largest tech and startup event. Three packages. One delegation. Unlimited opportunity.
+    </p>
+
+    <div class="flex flex-wrap gap-4 fade-up">
+      <a href="#register"
+         class="bg-[#6ee07e] hover:bg-white text-[#0C1F12] px-9 py-4 rounded-[4px] text-sm font-bold transition-colors flex items-center gap-2.5">
+        Register Your Interest
+        <iconify-icon icon="solar:arrow-right-linear" width="17"></iconify-icon>
+      </a>
+      <a href="#packages"
+         class="border border-white/20 hover:border-white/50 text-white px-9 py-4 rounded-[4px] text-sm font-medium transition-colors">
+        See Packages &amp; Pricing
+      </a>
+    </div>
+
+    <!-- Stats -->
+    <div class="mt-20 grid grid-cols-3 gap-6 max-w-xl fade-up">
+      <div class="border-l-2 border-[#1F6B3A] pl-5">
+        <div class="text-3xl font-bold text-white mb-0.5">13k<span class="text-[#6ee07e]">+</span></div>
+        <p class="text-[11px] uppercase tracking-widest text-white/40 font-semibold leading-tight">Slush Attendees</p>
+      </div>
+      <div class="border-l-2 border-[#1F6B3A] pl-5">
+        <div class="text-3xl font-bold text-white mb-0.5">3k<span class="text-[#6ee07e]">+</span></div>
+        <p class="text-[11px] uppercase tracking-widest text-white/40 font-semibold leading-tight">Investors Present</p>
+      </div>
+      <div class="border-l-2 border-[#1F6B3A] pl-5">
+        <div class="text-3xl font-bold text-white mb-0.5">130<span class="text-[#6ee07e]">+</span></div>
+        <p class="text-[11px] uppercase tracking-widest text-white/40 font-semibold leading-tight">Countries</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ── Divider ──────────────────────────────── -->
+  <div class="relative z-10 max-w-[1200px] mx-auto px-6 md:px-10">
+    <div class="h-[1px] bg-gradient-to-r from-transparent via-[#1F6B3A]/50 to-transparent"></div>
+  </div>
+
+  <!-- ══════════════════ WHY SLUSH ══════════════════ -->
+  <section class="relative z-10 max-w-[1200px] mx-auto px-6 md:px-10 py-24">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="flex items-center gap-2.5 mb-6 fade-up">
+          <iconify-icon icon="solar:star-shine-linear" width="17" class="text-[#6ee07e]"></iconify-icon>
+          <span class="text-[11px] uppercase tracking-widest text-[#6ee07e] font-semibold">Why Slush</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] mb-6 fade-up">
+          Europe's biggest<br/>stage for
+          <span class="font-serif-news italic font-light text-white/50"> global founders.</span>
+        </h2>
+        <p class="text-base text-white/55 leading-relaxed mb-8 fade-up">
+          Slush is not a conference — it's where deals get done. Thousands of investors, corporates, and the world's most ambitious founders converge in Helsinki each year. African startups that show up prepared leave with relationships that change their trajectories.
+        </p>
+        <p class="text-base text-white/55 leading-relaxed fade-up">
+          Heave Ventures negotiates access, handles the logistics, and surrounds you with the right people — so you can focus entirely on what matters: your pitch, your meetings, and your next raise.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 fade-up">
+        <div class="bg-white/5 border border-white/10 rounded-[6px] p-6 hover:border-[#1F6B3A]/40 transition-colors">
+          <iconify-icon icon="solar:users-group-two-rounded-linear" width="24" class="text-[#6ee07e] mb-4 block"></iconify-icon>
+          <h4 class="text-sm font-bold text-white mb-2">Curated Delegation</h4>
+          <p class="text-xs text-white/48 leading-relaxed">Every delegate is vetted. You'll be surrounded by the right cohort of African founders.</p>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-[6px] p-6 hover:border-[#1F6B3A]/40 transition-colors">
+          <iconify-icon icon="solar:hand-money-linear" width="24" class="text-[#6ee07e] mb-4 block"></iconify-icon>
+          <h4 class="text-sm font-bold text-white mb-2">Investor Dinner Access</h4>
+          <p class="text-xs text-white/48 leading-relaxed">All tiers include access to our exclusive Finland Investors Dinner — a curated evening with global investors.</p>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-[6px] p-6 hover:border-[#1F6B3A]/40 transition-colors">
+          <iconify-icon icon="solar:document-text-linear" width="24" class="text-[#6ee07e] mb-4 block"></iconify-icon>
+          <h4 class="text-sm font-bold text-white mb-2">Visa Support</h4>
+          <p class="text-xs text-white/48 leading-relaxed">Full documentation guidance and support throughout the Schengen visa application process.</p>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-[6px] p-6 hover:border-[#1F6B3A]/40 transition-colors">
+          <iconify-icon icon="solar:map-point-wave-linear" width="24" class="text-[#6ee07e] mb-4 block"></iconify-icon>
+          <h4 class="text-sm font-bold text-white mb-2">On-Ground Support</h4>
+          <p class="text-xs text-white/48 leading-relaxed">Local logistics coordination from arrival to the Slush venue. You won't navigate Helsinki alone.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ── Divider ──────────────────────────────── -->
+  <div class="relative z-10 max-w-[1200px] mx-auto px-6 md:px-10">
+    <div class="h-[1px] bg-gradient-to-r from-transparent via-[#1F6B3A]/50 to-transparent"></div>
+  </div>
+
+  <!-- ══════════════════ PACKAGES ══════════════════ -->
+  <section id="packages" class="relative z-10 max-w-[1200px] mx-auto px-6 md:px-10 py-24">
+
+    <div class="flex items-center gap-2.5 mb-5 fade-up">
+      <iconify-icon icon="solar:widget-5-linear" width="17" class="text-[#6ee07e]"></iconify-icon>
+      <span class="text-[11px] uppercase tracking-widest text-[#6ee07e] font-semibold">Delegation Packages</span>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-end mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] fade-up">
+        Three tiers.<br/>
+        <span class="font-serif-news italic font-light text-white/45">One delegation.</span>
+      </h2>
+      <p class="text-base text-white/50 leading-relaxed fade-up">
+        Choose the level of support that fits your stage and ambition. Naira equivalents are settled at the applicable exchange rate at point of payment.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+      <!-- Tier 1 -->
+      <div class="tier-card bg-white/5 border border-white/12 rounded-[8px] p-8 flex flex-col fade-up hover:border-[#1F6B3A]/50 hover:bg-white/8">
+        <div class="mb-6">
+          <span class="text-[11px] uppercase tracking-widest text-white/45 font-semibold bg-white/8 border border-white/12 rounded-full px-3 py-1">Tier 1</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Slush Access Package</h3>
+        <p class="text-sm text-white/48 mb-6 leading-relaxed">Event access, investor dinner, visa support, and local logistics. You handle your own travel and accommodation.</p>
+
+        <div class="mb-6 pb-6 border-b border-white/10">
+          <div class="flex items-baseline gap-2">
+            <span class="text-4xl font-bold text-white">€1,585</span>
+          </div>
+          <p class="text-xs text-white/40 mt-1 font-medium">Approx. ₦2.6m at point of payment</p>
+        </div>
+
+        <ul class="flex flex-col gap-3 flex-1 mb-8">
+          <li class="flex items-start gap-2.5 text-sm text-white/65">
+            <iconify-icon icon="solar:check-circle-linear" width="16" class="text-[#6ee07e] shrink-0 mt-0.5"></iconify-icon>
+            Slush Main Event access
+          </li>
+          <li class="flex items-start gap-2.5 text-sm text-white/65">
+            <iconify-icon icon="solar:check-circle-linear" width="16" class="text-[#6ee07e] shrink-0 mt-0.5"></iconify-icon>
+            Heave Ventures curated Finland Investors Dinner
+          </li>
+          <li class="flex items-start gap-2.5 text-sm text-white/65">
+            <iconify-icon icon="solar:check-circle-linear" width="16" class="text-[#6ee07e] shrink-0 mt-0.5"></iconify-icon>
+            Visa support and documentation guidance
+          </li>
+          <li class="flex items-start gap-2.5 text-sm text-white/65">
+            <iconify-icon icon="solar:check-circle-linear" width="16" class="text-[#6ee07e] shrink-0 mt-0.5"></iconify-icon>
+            Local logistics support to Slush venue
+          </li>
+          <li class="flex items-start gap-2.5 text-sm text-white/65">
+            <iconify-icon icon="solar:check-circle-linear" width="16" class="text-[#6ee07e] shrink-0 mt-0.5"></iconify-icon>
+            Pre-departure briefing and delegation coordination
+          </li>
+          <li class="flex items-start gap-2.5 text-sm text-white/35 mt-2 pt-2 border-t border-white/8">
+            <iconify-icon icon="solar:close-circle-linear" width="16" class="text-white/25 shrink-0 mt-0.5"></iconify-icon>
+            <span>Startup covers: flights, hotel, visa fee, feeding</span>
+          </li>
+        </ul>
+
+        <a href="#register" class="block text-center border border-white/25 hover:border-[#6ee07e] hover:bg-[#1F6B3A]/20 text-white text-sm font-semibold py-3.5 rounded-[4px] transition-all">
+          Apply for Tier 1
+        </a>
+      </div>
+
+      <!-- Tier 2 -->
+      <div class="tier-card bg-white/5 border border-white/12 rounded-[8px] p-8 flex flex-col fade-up hover:border-[#1F6B3A]/50 hover:bg-white/8">
+        <div class="mb-6">
+          <span class="text-[11px] uppercase tracking-widest text-white/45 font-semibold bg-white/8 border border-white/12 rounded-full px-3 py-1">Tier 2</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Full Delegation Package</h3>
+        <p class="text-sm text-white/48 mb-6 leading-relaxed">Everything in Tier 1, plus your return flights and hotel fully coordinated by Heave Ventures.</p>
+
+        <div class="mb-6 pb-6 border-b border-white/10">
+          <div class="flex items-baseline gap-2">
+            <span class="text-4xl font-bold text-white">€3,304</span>
+          </div>
+          <p class="text-xs text-white/40 mt-1 font-medium">Approx. ₦5.5m at point of payment</p>
+        </div>
+
+        <ul class="flex flex-col gap-3 flex-1 mb-8">
+          <li class="flex items-start gap-2.5 text-sm text-white/65">
+            <iconify-icon icon="solar:check-circle-linear" width="16" class="text-[#6ee07e] shrink-0 mt-0.5"></iconify-icon>
+            Everything in Tier 1
+          </li>
+          <li class="flex items-start gap-2.5 text-sm text-white/65">
+            <iconify-icon icon="solar:check-circle-linear" width="16" class="text-[#6ee07e] shrink-0 mt-0.5"></iconify-icon>
+            Return flight ticket included
+          </li>
+          <li class="flex items-start gap-2.5 text-sm text-white/65">
+            <iconify-icon icon="solar:check-circle-linear" width="16" class="text-[#6ee07e] shrink-0 mt-0.5"></iconify-icon>
+            Hotel accommodation for 3 nights
+          </li>
+          <li class="flex items-start gap-2.5 text-sm text-white/65">
+            <iconify-icon icon="solar:check-circle-linear" width="16" class="text-[#6ee07e] shrink-0 mt-0.5"></iconify-icon>
+            Full travel and accommodation coordination
+          </li>
+          <li class="flex items-start gap-2.5 text-sm text-white/65">
+            <iconify-icon icon="solar:check-circle-linear" width="16" class="text-[#6ee07e] shrink-0 mt-0.5"></iconify-icon>
+            Heave Ventures curated Finland Investors Dinner
+          </li>
+        </ul>
+
+        <a href="#register" class="block text-center border border-white/25 hover:border-[#6ee07e] hover:bg-[#1F6B3A]/20 text-white text-sm font-semibold py-3.5 rounded-[4px] transition-all">
+          Apply for Tier 2
+        </a>
+      </div>
+
+      <!-- Tier 3 — highlighted -->
+      <div class="tier-card bg-[#1F6B3A] border border-[#1F6B3A] rounded-[8px] p-8 flex flex-col fade-up relative overflow-hidden shadow-[0_0_60px_rgba(31,107,58,0.35)]">
+        <div class="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full blur-[60px] pointer-events-none"></div>
+
+        <div class="mb-6 flex items-center justify-between">
+          <span class="text-[11px] uppercase tracking-widest text-white/70 font-semibold bg-white/12 rounded-full px-3 py-1">Tier 3</span>
+          <span class="text-[11px] uppercase tracking-widest text-[#0C1F12] font-bold bg-[#6ee07e] rounded-full px-3 py-1">Most Comprehensive</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Full Delegation + Exhibitor</h3>
+        <p class="text-sm text-white/65 mb-6 leading-relaxed">Full delegation support, shared exhibition booth, and a dedicated investor readiness track.</p>
+
+        <div class="mb-6 pb-6 border-b border-white/20">
+          <div class="flex items-baseline gap-2">
+            <span class="text-4xl font-bold text-white">€5,050</span>
+          </div>
+          <p class="text-xs text-white/55 mt-1 font-medium">Approx. ₦8m at point of payment</p>
+        </div>
+
+        <ul class="flex flex-col gap-3 flex-1 mb-8">
+          <li class="flex items-start gap-2.5 text-sm text-white/80">
+            <iconify-icon icon="solar:check-circle-linear" width="16" class="text-[#6ee07e] shrink-0 mt-0.5"></iconify-icon>
+            Everything in Tier 2
+          </li>
+          <li class="flex items-start gap-2.5 text-sm text-white/80">
+            <iconify-icon icon="solar:check-circle-linear" width="16" class="text-[#6ee07e] shrink-0 mt-0.5"></iconify-icon>
+            Shared exhibition booth access at Slush
+          </li>
+          <li class="flex items-start gap-2.5 text-sm text-white/80">
+            <iconify-icon icon="solar:check-circle-linear" width="16" class="text-[#6ee07e] shrink-0 mt-0.5"></iconify-icon>
+            <span><strong>Pitch readiness</strong> — narrative and investor positioning review</span>
+          </li>
+          <li class="flex items-start gap-2.5 text-sm text-white/80">
+            <iconify-icon icon="solar:check-circle-linear" width="16" class="text-[#6ee07e] shrink-0 mt-0.5"></iconify-icon>
+            <span><strong>Profile preparation</strong> — founder and startup profile refinement</span>
+          </li>
+          <li class="flex items-start gap-2.5 text-sm text-white/80">
+            <iconify-icon icon="solar:check-circle-linear" width="16" class="text-[#6ee07e] shrink-0 mt-0.5"></iconify-icon>
+            <span><strong>Meeting preparation</strong> — guidance on engaging investors and partners</span>
+          </li>
+          <li class="flex items-start gap-2.5 text-sm text-white/80">
+            <iconify-icon icon="solar:check-circle-linear" width="16" class="text-[#6ee07e] shrink-0 mt-0.5"></iconify-icon>
+            Investor introduction and meeting coordination support
+          </li>
+        </ul>
+
+        <a href="#register" class="block text-center bg-[#6ee07e] hover:bg-white text-[#0C1F12] text-sm font-bold py-3.5 rounded-[4px] transition-colors">
+          Apply for Tier 3
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Important note -->
+    <div class="mt-6 flex items-start gap-3 bg-white/5 border border-white/8 rounded-[6px] px-6 py-4 fade-up">
+      <iconify-icon icon="solar:info-circle-linear" width="18" class="text-[#6ee07e] shrink-0 mt-0.5"></iconify-icon>
+      <p class="text-sm text-white/55 leading-relaxed">
+        <strong class="text-white/75">Important:</strong> Naira equivalents are paid at the applicable exchange rate at the point of payment. Spots per tier are limited. Early applications are strongly encouraged.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════ INVESTORS DINNER ══════════════════ -->
+  <section class="relative z-10 max-w-[1200px] mx-auto px-6 md:px-10 pb-24">
+    <div class="relative bg-gradient-to-br from-[#1F6B3A]/30 to-[#1F6B3A]/10 border border-[#1F6B3A]/35 rounded-[8px] p-10 md:p-14 overflow-hidden fade-up">
+      <div class="absolute top-0 right-0 w-80 h-80 bg-[#1F6B3A]/20 blur-[80px] pointer-events-none"></div>
+      <div class="relative grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div>
+          <div class="flex items-center gap-2.5 mb-5">
+            <iconify-icon icon="solar:star-shine-linear" width="17" class="text-[#6ee07e]"></iconify-icon>
+            <span class="text-[11px] uppercase tracking-widest text-[#6ee07e] font-semibold">Included in All Tiers</span>
+          </div>
+          <h3 class="text-3xl md:text-4xl font-bold text-white tracking-tight leading-[1.15] mb-4">
+            The Finland<br/>
+            <span class="font-serif-news italic font-light text-white/55">Investors Dinner.</span>
+          </h3>
+          <p class="text-base text-white/55 leading-relaxed">
+            Every Heave Ventures delegate — regardless of tier — gets a seat at our curated dinner with Finland-based and global investors. This is not a networking event. It's a structured, intimate evening designed to put the right conversations in motion.
+          </p>
+        </div>
+        <div class="flex flex-col gap-4">
+          <div class="flex items-start gap-4 bg-white/6 border border-white/10 rounded-[6px] p-5">
+            <iconify-icon icon="solar:users-group-two-rounded-linear" width="22" class="text-[#6ee07e] shrink-0 mt-0.5"></iconify-icon>
+            <div>
+              <h4 class="text-sm font-bold text-white mb-1">Curated Guest List</h4>
+              <p class="text-xs text-white/48 leading-relaxed">Investors are pre-screened and matched with the delegation cohort profile.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 bg-white/6 border border-white/10 rounded-[6px] p-5">
+            <iconify-icon icon="solar:handshake-linear" width="22" class="text-[#6ee07e] shrink-0 mt-0.5"></iconify-icon>
+            <div>
+              <h4 class="text-sm font-bold text-white mb-1">Structured Conversations</h4>
+              <p class="text-xs text-white/48 leading-relaxed">Designed to move beyond surface introductions and into real deal discussion.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 bg-white/6 border border-white/10 rounded-[6px] p-5">
+            <iconify-icon icon="solar:map-point-wave-linear" width="22" class="text-[#6ee07e] shrink-0 mt-0.5"></iconify-icon>
+            <div>
+              <h4 class="text-sm font-bold text-white mb-1">Helsinki, Finland</h4>
+              <p class="text-xs text-white/48 leading-relaxed">Held during the Slush week in a private venue in Helsinki.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Divider ──────────────────────────────── -->
+  <div class="relative z-10 max-w-[1200px] mx-auto px-6 md:px-10">
+    <div class="h-[1px] bg-gradient-to-r from-transparent via-[#1F6B3A]/50 to-transparent"></div>
+  </div>
+
+  <!-- ══════════════════ REGISTER ══════════════════ -->
+  <section id="register" class="relative z-10 max-w-[1200px] mx-auto px-6 md:px-10 py-24">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+      <!-- Left copy -->
+      <div>
+        <div class="flex items-center gap-2.5 mb-6 fade-up">
+          <iconify-icon icon="solar:document-text-linear" width="17" class="text-[#6ee07e]"></iconify-icon>
+          <span class="text-[11px] uppercase tracking-widest text-[#6ee07e] font-semibold">Register Your Interest</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] mb-6 fade-up">
+          Secure your<br/>
+          <span class="font-serif-news italic font-light text-white/45">place in the cohort.</span>
+        </h2>
+        <p class="text-base text-white/52 leading-relaxed mb-10 fade-up">
+          Spots in each tier are limited and allocated on a first-come, first-served basis. Submit your interest and a Delegate Management Partner will reach out to guide you through the full registration process.
+        </p>
+
+        <div class="flex flex-col gap-5 fade-up">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-[#1F6B3A] text-white text-xs font-bold flex items-center justify-center shrink-0">1</div>
+            <div>
+              <h4 class="text-sm font-bold text-white mb-1">Submit your interest</h4>
+              <p class="text-xs text-white/45 leading-relaxed">Fill in the form with your startup details and preferred tier.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-[#1F6B3A] text-white text-xs font-bold flex items-center justify-center shrink-0">2</div>
+            <div>
+              <h4 class="text-sm font-bold text-white mb-1">Speak with a delegate manager</h4>
+              <p class="text-xs text-white/45 leading-relaxed">Our team will walk you through the full process, answer every question, and confirm your spot.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-[#1F6B3A] text-white text-xs font-bold flex items-center justify-center shrink-0">3</div>
+            <div>
+              <h4 class="text-sm font-bold text-white mb-1">Join the delegation</h4>
+              <p class="text-xs text-white/45 leading-relaxed">Complete your onboarding, submit documents, and prepare for Helsinki.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Speak to delegate CTA -->
+        <div class="mt-10 p-6 bg-white/5 border border-white/10 rounded-[6px] fade-up">
+          <p class="text-xs uppercase tracking-widest text-white/45 font-semibold mb-2">Prefer to speak first?</p>
+          <p class="text-sm text-white/60 leading-relaxed mb-4">Reach out directly to our delegation team and we'll walk you through everything.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="mailto:theteam@heaveventures.com?subject=Slush 2026 Delegation Enquiry"
+               class="inline-flex items-center gap-2 bg-white/8 hover:bg-white/14 border border-white/12 text-white text-xs font-semibold px-4 py-2.5 rounded-[4px] transition-colors">
+              <iconify-icon icon="solar:letter-linear" width="14" class="text-[#6ee07e]"></iconify-icon>
+              theteam@heaveventures.com
+            </a>
+            <a href="tel:+2349022618668"
+               class="inline-flex items-center gap-2 bg-white/8 hover:bg-white/14 border border-white/12 text-white text-xs font-semibold px-4 py-2.5 rounded-[4px] transition-colors">
+              <iconify-icon icon="solar:phone-linear" width="14" class="text-[#6ee07e]"></iconify-icon>
+              +234 902 261 8668
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right form -->
+      <div class="bg-white/5 border border-white/12 rounded-[8px] p-8 md:p-10 fade-up">
+        <h3 class="text-lg font-bold text-white mb-6">Register Your Interest</h3>
+
+        <form id="slush-form" class="flex flex-col gap-4">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="flex flex-col gap-1.5">
+              <label class="text-[11px] uppercase tracking-widest text-white/45 font-semibold">First Name <span class="text-[#6ee07e]">*</span></label>
+              <input name="first_name" type="text" placeholder="Ada" required class="hv-input" />
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label class="text-[11px] uppercase tracking-widest text-white/45 font-semibold">Last Name <span class="text-[#6ee07e]">*</span></label>
+              <input name="last_name" type="text" placeholder="Okonkwo" required class="hv-input" />
+            </div>
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[11px] uppercase tracking-widest text-white/45 font-semibold">Email Address <span class="text-[#6ee07e]">*</span></label>
+            <input name="email" type="email" placeholder="ada@yourstartup.com" required class="hv-input" />
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[11px] uppercase tracking-widest text-white/45 font-semibold">Startup / Company Name <span class="text-[#6ee07e]">*</span></label>
+            <input name="startup" type="text" placeholder="Your startup name" required class="hv-input" />
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="flex flex-col gap-1.5">
+              <label class="text-[11px] uppercase tracking-widest text-white/45 font-semibold">Startup Stage</label>
+              <select name="stage" class="hv-input">
+                <option value="">Select stage</option>
+                <option>Pre-seed</option>
+                <option>Seed</option>
+                <option>Series A</option>
+                <option>Series B+</option>
+                <option>Growth</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label class="text-[11px] uppercase tracking-widest text-white/45 font-semibold">Preferred Tier <span class="text-[#6ee07e]">*</span></label>
+              <select name="tier" required class="hv-input">
+                <option value="">Select tier</option>
+                <option>Tier 1 — Slush Access (€1,585)</option>
+                <option>Tier 2 — Full Delegation (€3,304)</option>
+                <option>Tier 3 — Full + Exhibitor (€5,050)</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <label class="text-[11px] uppercase tracking-widest text-white/45 font-semibold">What do you want to achieve at Slush?</label>
+            <textarea name="goals" rows="3" placeholder="Fundraising, partnerships, market expansion..." class="hv-input resize-none"></textarea>
+          </div>
+
+          <button type="submit" id="slush-submit"
+            class="bg-[#6ee07e] hover:bg-white text-[#0C1F12] py-4 rounded-[4px] text-sm font-bold transition-colors flex items-center justify-center gap-2 mt-2">
+            <span id="slush-btn-label">Submit My Interest</span>
+            <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon>
+          </button>
+
+          <p class="text-[11px] text-white/30 text-center leading-relaxed">
+            By submitting, you agree to be contacted by the Heave Ventures delegation team. No spam. Ever.
+          </p>
+        </form>
+
+        <div id="slush-success" class="hidden flex-col items-center text-center py-12 gap-4">
+          <iconify-icon icon="solar:check-circle-linear" width="48" class="text-[#6ee07e]"></iconify-icon>
+          <h4 class="text-xl font-bold text-white">You're on the list.</h4>
+          <p class="text-sm text-white/52 max-w-xs leading-relaxed">Our Delegate Management team will be in touch within 48 hours to walk you through next steps.</p>
+          <a href="mailto:theteam@heaveventures.com?subject=Slush 2026 - Following Up"
+             class="mt-2 text-[#6ee07e] text-sm font-semibold hover:underline">
+            Or email us directly →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════ FOOTER ══════════════════ -->
+  <footer class="relative z-10 border-t border-white/8 mt-8">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-10 py-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+      <div>
+        <img src="../logo-dark.png" alt="Heave Ventures" class="h-6 w-auto mb-3" style="filter:invert(1) brightness(2);" />
+        <p class="text-xs text-white/32">Heave Ventures · Slush 2026 Startup Delegation</p>
+      </div>
+      <div class="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+        <a href="/" class="text-xs text-white/40 hover:text-white transition-colors">heaveventures.com</a>
+        <a href="mailto:theteam@heaveventures.com" class="text-xs text-white/40 hover:text-white transition-colors">theteam@heaveventures.com</a>
+        <a href="tel:+2349022618668" class="text-xs text-white/40 hover:text-white transition-colors">+234 902 261 8668</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // GSAP animations
+    document.addEventListener('DOMContentLoaded', () => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.utils.toArray('.fade-up').forEach(el => {
+        gsap.to(el, {
+          y: 0, opacity: 1, duration: 0.75, ease: 'power3.out',
+          scrollTrigger: { trigger: el, start: 'top 90%', toggleActions: 'play none none none' }
+        });
+      });
+    });
+
+    // Form submission
+    // Replace with your Google Apps Script URL (same setup as main site)
+    const SHEET_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
+
+    document.getElementById('slush-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn   = document.getElementById('slush-submit');
+      const label = document.getElementById('slush-btn-label');
+      label.textContent = 'Submitting...';
+      btn.disabled = true;
+
+      const data = Object.fromEntries(new FormData(e.target));
+      data.source = 'slush-26';
+
+      try {
+        await fetch(SHEET_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        document.getElementById('slush-form').style.display    = 'none';
+        document.getElementById('slush-success').style.display = 'flex';
+      } catch (err) {
+        label.textContent = 'Submit My Interest';
+        btn.disabled = false;
+        alert('Something went wrong. Please email us directly at theteam@heaveventures.com');
+      }
+    });
+  </script>
+
+</body>
+</html>
