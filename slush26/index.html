@@ -77,9 +77,16 @@
       </a>
       <div class="flex items-center gap-3">
         <a href="#packages" class="hidden md:block text-sm text-white/60 hover:text-white transition-colors font-medium">View Packages</a>
+        <!-- Full label on desktop, icon-only on mobile -->
         <a href="#register"
-           class="bg-[#1F6B3A] hover:bg-[#256b3e] text-white text-xs font-semibold uppercase tracking-widest px-5 py-2.5 rounded-[4px] transition-colors">
+           class="bg-[#1F6B3A] hover:bg-[#256b3e] text-white text-xs font-semibold uppercase tracking-widest rounded-[4px] transition-colors
+                  hidden md:flex items-center gap-2 px-5 py-2.5">
           Register Interest
+        </a>
+        <a href="#register"
+           class="md:hidden bg-[#1F6B3A] hover:bg-[#256b3e] text-white text-xs font-semibold px-3.5 py-2.5 rounded-[4px] transition-colors flex items-center gap-1.5">
+          Apply
+          <iconify-icon icon="solar:arrow-right-linear" width="13"></iconify-icon>
         </a>
       </div>
     </div>
