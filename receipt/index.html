@@ -33,31 +33,6 @@
       color: var(--text);
     }
 
-    /* ─── AUTH ──────────────────────────────────── */
-
-    #auth {
-      position: fixed; inset: 0;
-      background: var(--bg);
-      display: flex; align-items: center; justify-content: center;
-      z-index: 300;
-    }
-
-    .auth-card { width: 340px; }
-
-    .auth-mark {
-      display: flex; align-items: center; gap: 10px;
-      margin-bottom: 36px;
-    }
-
-    .auth-mark-label {
-      font-size: 13px; font-weight: 600; color: var(--cream);
-      letter-spacing: -.01em;
-    }
-
-    .auth-h { font-size: 21px; font-weight: 600; letter-spacing: -.03em; color: var(--cream); margin-bottom: 8px; }
-    .auth-p { font-size: 13px; color: var(--dim); line-height: 1.55; margin-bottom: 28px; }
-    .auth-err { font-size: 12px; color: #e05555; margin-top: 8px; display: none; }
-
     /* ─── SHARED INPUTS ──────────────────────────── */
 
     .field { display: flex; flex-direction: column; gap: 5px; margin-bottom: 11px; }
@@ -116,8 +91,7 @@
 
     /* ─── APP SHELL ──────────────────────────────── */
 
-    #app { display: none; height: 100vh; }
-    #app.on { display: flex; }
+    #app { display: flex; height: 100vh; }
 
     /* ─── SIDEBAR ────────────────────────────────── */
 
@@ -347,34 +321,6 @@
 </head>
 <body>
 
-<!-- ══════════ AUTH ══════════ -->
-<div id="auth">
-  <div class="auth-card">
-
-    <div class="auth-mark">
-      <svg width="26" height="22" viewBox="0 0 32 26" fill="none">
-        <rect x="0"  y="7"  width="8" height="19" fill="#E7E2DA" transform="skewX(-8)"/>
-        <rect x="12" y="0"  width="8" height="26" fill="#E7E2DA" transform="skewX(-8)"/>
-        <rect x="24" y="10" width="8" height="16" fill="#1F6B3A" transform="skewX(-8)"/>
-      </svg>
-      <span class="auth-mark-label">Heave Ventures</span>
-    </div>
-
-    <h1 class="auth-h">Document Builder</h1>
-    <p class="auth-p">Internal tool — receipts, invoices, and proforma documents.<br>Enter your access code to continue.</p>
-
-    <div class="field">
-      <label class="lbl" for="auth-pass">Access Code</label>
-      <input type="password" id="auth-pass" placeholder="••••••••••••••" autocomplete="current-password" />
-    </div>
-    <p class="auth-err" id="auth-err">Incorrect code. Try again.</p>
-    <div style="margin-top:16px;">
-      <button class="btn btn-green btn-full" onclick="login()">Continue →</button>
-    </div>
-
-  </div>
-</div>
-
 <!-- ══════════ APP ══════════ -->
 <div id="app">
 
@@ -502,8 +448,6 @@
 <script>
 /* ── CONFIG ──────────────────────────────────────── */
 
-const HASH = '7efadbf5741c03582bd882ea5a67f26521200f37ac19ae41c2b1039704a2e27e'; // HVReceipts2026
-
 const CO = {
   name:    'Heave Ventures',
   addr:    '366 Murtala Muhammed Way\nYaba, Lagos, Nigeria',
@@ -524,37 +468,9 @@ let dtype = 'Receipt';
 let rows  = [];
 let nextId = 1;
 
-/* ── AUTH ────────────────────────────────────────── */
-
-async function sha256(s) {
-  const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
-  return Array.from(new Uint8Array(b)).map(x => x.toString(16).padStart(2,'0')).join('');
-}
-
-async function login() {
-  const v = document.getElementById('auth-pass').value;
-  const h = await sha256(v);
-  if (h === HASH) {
-    sessionStorage.setItem('hv-doc-ok','1');
-    show();
-  } else {
-    document.getElementById('auth-err').style.display = 'block';
-    document.getElementById('auth-pass').value = '';
-  }
-}
-
-document.getElementById('auth-pass').addEventListener('keydown', e => { if (e.key==='Enter') login(); });
-document.getElementById('auth-pass').addEventListener('input',   () => { document.getElementById('auth-err').style.display='none'; });
-
-function show() {
-  document.getElementById('auth').style.display = 'none';
-  document.getElementById('app').classList.add('on');
-  boot();
-}
-
-if (sessionStorage.getItem('hv-doc-ok') === '1') show();
-
 /* ── INIT ────────────────────────────────────────── */
+
+window.addEventListener('DOMContentLoaded', boot);
 
 function boot() {
   const today = new Date().toISOString().slice(0,10);
